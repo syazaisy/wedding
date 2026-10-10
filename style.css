@@ -1369,4 +1369,317 @@ textarea {
 
     }
 
+}/* =========================================
+   FINAL PAGE 1 DESIGN OVERRIDE
+   ========================================= */
+
+section#opening.opening {
+    min-height: 100vh !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    background: #f5f2dc !important;
+    color: #4d632d !important;
+
+    padding-top: 55px !important;
+    padding-bottom: 45px !important;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+section#opening .opening-title {
+    position: relative !important;
+    z-index: 20 !important;
+
+    display: block !important;
+
+    text-align: center !important;
+
+    color: #4d632d !important;
+
+    font-family: "Caveat", cursive !important;
+
+    font-size: clamp(55px, 12vw, 95px) !important;
+
+    font-weight: 500 !important;
+
+    line-height: 0.85 !important;
+
+    letter-spacing: -2px !important;
+
+    margin: 0 !important;
+
+    transform: rotate(-1deg) !important;
+}
+
+
+section#opening .opening-title .wedding-day {
+    margin-top: 5px !important;
+    font-size: 1em !important;
+}
+
+
+/* =========================================
+   RED UNDERLINE
+   ========================================= */
+
+section#opening .red-scribble {
+    display: block !important;
+
+    width: 330px !important;
+    max-width: 75vw !important;
+
+    height: 15px !important;
+
+    margin: 10px auto 0 !important;
+
+    border-bottom: 6px solid #d91d20 !important;
+
+    border-radius: 50% !important;
+
+    transform: rotate(1deg) skewX(-12deg) !important;
+
+    position: relative !important;
+}
+
+
+/* =========================================
+   HEARTS
+   ========================================= */
+
+section#opening .heart {
+    position: absolute !important;
+
+    z-index: 10 !important;
+
+    color: #d91d20 !important;
+
+    font-family: Arial, sans-serif !important;
+
+    line-height: 1 !important;
+}
+
+
+/* =========================================
+   PHOTO AREA
+   ========================================= */
+
+section#opening .childhood-photos {
+    position: relative !important;
+
+    z-index: 8 !important;
+
+    width: min(100%, 600px) !important;
+
+    height: 580px !important;
+
+    margin-top: 25px !important;
+}
+
+
+/* Individual child */
+
+section#opening .child-photo {
+    position: absolute !important;
+
+    bottom: 0 !important;
+
+    width: 58% !important;
+
+    height: 540px !important;
+
+    display: flex !important;
+
+    align-items: flex-end !important;
+
+    justify-content: center !important;
+
+    background: transparent !important;
+
+    border: none !important;
+}
+
+
+section#opening .syaza-photo {
+    left: 2% !important;
+
+    z-index: 9 !important;
+
+    transform: rotate(-2deg) !important;
+}
+
+
+section#opening .aisy-photo {
+    right: 2% !important;
+
+    z-index: 10 !important;
+
+    transform: rotate(2deg) !important;
+}
+
+
+/* =========================================
+   TEMPORARY PHOTO PLACEHOLDER
+   ========================================= */
+
+section#opening .photo-placeholder {
+    width: 100% !important;
+
+    height: 100% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    background: #f5ead4 !important;
+
+    color: #a51f23 !important;
+
+    font-family: Georgia, serif !important;
+
+    font-size: 18px !important;
+
+    border: 7px solid #d91d20 !important;
+
+    border-radius: 48% 52% 46% 54% / 40% 44% 56% 60% !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================
+   OPEN INVITATION
+   ========================================= */
+
+section#opening .open-invitation-button {
+    position: relative !important;
+
+    z-index: 30 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: min(90%, 550px) !important;
+
+    min-height: 110px !important;
+
+    margin-top: -55px !important;
+
+    padding: 20px 40px !important;
+
+    border: none !important;
+
+    background: #4d632d !important;
+
+    color: #fffdf0 !important;
+
+    font-family: "Caveat", cursive !important;
+
+    font-size: clamp(38px, 8vw, 58px) !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1 !important;
+
+    border-radius: 50% 45% 52% 48% / 55% 48% 52% 45% !important;
+
+    transform: rotate(-1deg) !important;
+
+    box-shadow: none !important;
+
+    cursor: pointer !important;
+}
+
+
+section#opening .open-invitation-button::before {
+    content: "" !important;
+
+    position: absolute !important;
+
+    inset: 5px !important;
+
+    border: 2px solid rgba(255,255,255,0.18) !important;
+
+    border-radius: inherit !important;
+
+    pointer-events: none !important;
+}
+
+
+section#opening .open-invitation-button span {
+    position: relative !important;
+
+    z-index: 2 !important;
+
+    color: #fffdf0 !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    section#opening.opening {
+        padding-top: 40px !important;
+    }
+
+
+    section#opening .opening-title {
+        font-size: 58px !important;
+    }
+
+
+    section#opening .childhood-photos {
+        width: 100% !important;
+
+        height: 500px !important;
+
+        margin-top: 25px !important;
+    }
+
+
+    section#opening .child-photo {
+        width: 63% !important;
+
+        height: 470px !important;
+    }
+
+
+    section#opening .syaza-photo {
+        left: -3% !important;
+    }
+
+
+    section#opening .aisy-photo {
+        right: -3% !important;
+    }
+
+
+    section#opening .open-invitation-button {
+        width: 90% !important;
+
+        min-height: 90px !important;
+
+        margin-top: -35px !important;
+
+        font-size: 42px !important;
+    }
+
 }
