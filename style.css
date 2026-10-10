@@ -41,7 +41,589 @@ body {
 }
 
 
-/* ---------- OPENING SCREEN ---------- */
+/* =========================================
+   PAGE 1 — OPENING
+   HANDMADE CHILDHOOD SCRAPBOOK
+   ========================================= */
+
+.opening {
+
+    min-height: 100vh;
+    width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #f5f2dc;
+
+    color: #4d632d;
+
+    padding-top: 55px;
+    padding-bottom: 45px;
+
+}
+
+
+/* =========================================
+   HANDWRITTEN TITLE
+   ========================================= */
+
+.opening-title {
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    color: #4d632d;
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(50px, 13vw, 88px);
+
+    font-weight: 500;
+
+    line-height: 0.82;
+
+    letter-spacing: -2px;
+
+    transform: rotate(-1deg);
+
+}
+
+
+/* Wedding Day */
+
+.opening-title .wedding-day {
+
+    margin-top: 7px;
+
+    font-size: 0.98em;
+
+}
+
+
+/* =========================================
+   RED HAND-DRAWN UNDERLINE
+   ========================================= */
+
+.red-scribble {
+
+    width: 330px;
+
+    max-width: 75vw;
+
+    height: 13px;
+
+    margin: 10px auto 0;
+
+    border-bottom: 6px solid #d91d20;
+
+    border-radius: 50%;
+
+    transform:
+        rotate(1deg)
+        skewX(-12deg);
+
+    position: relative;
+
+}
+
+
+/* little crossing scribble */
+
+.red-scribble::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+
+    height: 9px;
+
+    border-bottom: 5px solid #d91d20;
+
+    left: 180px;
+
+    top: -18px;
+
+    transform: rotate(-45deg);
+
+    border-radius: 50%;
+
+}
+
+
+/* =========================================
+   CHILDHOOD PHOTO AREA
+   ========================================= */
+
+.childhood-photos {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(100%, 520px);
+
+    height: 560px;
+
+    margin-top: 35px;
+
+}
+
+
+/* Individual photo */
+
+.child-photo {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 57%;
+
+    height: 520px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+}
+
+
+/* Syaza */
+
+.syaza-photo {
+
+    left: 5%;
+
+    z-index: 2;
+
+    transform: rotate(-1deg);
+
+}
+
+
+/* Aisy */
+
+.aisy-photo {
+
+    right: 4%;
+
+    z-index: 3;
+
+    transform: rotate(2deg);
+
+}
+
+
+/* =========================================
+   TEMPORARY PHOTO PLACEHOLDER
+   ========================================= */
+
+.photo-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    background: #ded8c1;
+
+    color: #a51f23;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 24px;
+
+    border: 7px solid #d91d20;
+
+    border-radius: 48% 52% 46% 54% / 40% 44% 56% 60%;
+
+    box-shadow: none;
+
+}
+
+
+/*
+   When the actual photos are added,
+   this placeholder will be replaced
+   by the real cut-out image.
+*/
+
+
+/* =========================================
+   HEART DOODLES
+   ========================================= */
+
+.heart {
+
+    position: absolute;
+
+    z-index: 4;
+
+    color: #df171b;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1;
+
+    user-select: none;
+
+}
+
+
+/* top left */
+
+.heart-1 {
+
+    top: 220px;
+    left: 8%;
+
+    font-size: 58px;
+
+    transform: rotate(-15deg);
+
+}
+
+
+/* upper left-middle */
+
+.heart-2 {
+
+    top: 300px;
+    left: 25%;
+
+    font-size: 67px;
+
+    transform: rotate(10deg);
+
+}
+
+
+/* upper right */
+
+.heart-3 {
+
+    top: 245px;
+    right: 20%;
+
+    font-size: 85px;
+
+    transform: rotate(8deg);
+
+}
+
+
+/* right middle */
+
+.heart-4 {
+
+    top: 370px;
+    right: 7%;
+
+    font-size: 68px;
+
+    transform: rotate(15deg);
+
+}
+
+
+/* left middle */
+
+.heart-5 {
+
+    top: 470px;
+    left: 4%;
+
+    font-size: 57px;
+
+    transform: rotate(-15deg);
+
+}
+
+
+/* centre */
+
+.heart-6 {
+
+    top: 430px;
+    left: 48%;
+
+    font-size: 62px;
+
+    transform: rotate(8deg);
+
+}
+
+
+/* lower right */
+
+.heart-7 {
+
+    top: 525px;
+    right: 8%;
+
+    font-size: 50px;
+
+    transform: rotate(8deg);
+
+}
+
+
+/* small upper heart */
+
+.heart-8 {
+
+    top: 190px;
+    right: 35%;
+
+    font-size: 42px;
+
+    transform: rotate(-12deg);
+
+}
+
+
+/* =========================================
+   OPEN INVITATION BUTTON
+   ========================================= */
+
+.open-invitation-button {
+
+    position: relative;
+
+    z-index: 20;
+
+    width: min(90%, 500px);
+
+    min-height: 105px;
+
+    margin-top: -40px;
+
+    border: none;
+
+    cursor: pointer;
+
+    background: #4d632d;
+
+    color: #fffdf0;
+
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(34px, 8vw, 53px);
+
+    line-height: 1;
+
+    padding: 20px 40px;
+
+    border-radius:
+        50% 45% 52% 48%
+        /
+        55% 48% 52% 45%;
+
+    transform: rotate(-1deg);
+
+    box-shadow: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+/* handmade-looking secondary layer */
+
+.open-invitation-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border: 2px solid rgba(255,255,255,0.18);
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+}
+
+
+.open-invitation-button:hover {
+
+    background: #3e5225;
+
+    transform:
+        rotate(-1deg)
+        scale(1.02);
+
+}
+
+
+.open-invitation-button:active {
+
+    transform:
+        rotate(-1deg)
+        scale(0.98);
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .opening {
+
+        padding-top: 42px;
+
+    }
+
+
+    .opening-title {
+
+        font-size: 58px;
+
+        line-height: 0.85;
+
+    }
+
+
+    .red-scribble {
+
+        width: 270px;
+
+    }
+
+
+    .childhood-photos {
+
+        height: 470px;
+
+        margin-top: 25px;
+
+    }
+
+
+    .child-photo {
+
+        height: 440px;
+
+        width: 62%;
+
+    }
+
+
+    .syaza-photo {
+
+        left: 0;
+
+    }
+
+
+    .aisy-photo {
+
+        right: 0;
+
+    }
+
+
+    .heart-1 {
+
+        top: 205px;
+
+        left: 2%;
+
+    }
+
+
+    .heart-2 {
+
+        top: 280px;
+
+        left: 20%;
+
+    }
+
+
+    .heart-3 {
+
+        top: 220px;
+
+        right: 10%;
+
+    }
+
+
+    .heart-4 {
+
+        top: 350px;
+
+        right: 0;
+
+    }
+
+
+    .heart-5 {
+
+        top: 450px;
+
+        left: 0;
+
+    }
+
+
+    .heart-6 {
+
+        top: 410px;
+
+        left: 45%;
+
+    }
+
+
+    .heart-7 {
+
+        top: 500px;
+
+        right: 2%;
+
+    }
+
+
+    .open-invitation-button {
+
+        min-height: 85px;
+
+        margin-top: -25px;
+
+        font-size: 40px;
+
+    }
+
+}
 
 .opening {
     min-height: 100vh;
