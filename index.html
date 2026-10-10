@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the website look good on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Syaza & Aisy | Our Wedding</title>
+
+    <!-- Our design file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- ========================================= -->
+    <!-- 1. OPENING SCREEN -->
+    <!-- ========================================= -->
+
+    <section id="opening" class="opening">
+
+        <p class="small-title">THE WEDDING OF</p>
+
+        <h1>SYAZA & AISY</h1>
+
+        <p class="wedding-date">
+            05 · 12 · 2026
+        </p>
+
+        <!-- Childhood photos will be inserted here later -->
+
+        <div class="childhood-photos">
+
+            <div class="photo-placeholder">
+                SYAZA<br>
+                CHILDHOOD PHOTO
+            </div>
+
+            <div class="photo-placeholder">
+                AISY<br>
+                CHILDHOOD PHOTO
+            </div>
+
+        </div>
+
+
+        <!-- Open invitation button -->
+
+        <button class="open-button" onclick="openInvitation()">
+            OPEN INVITATION
+        </button>
+
+
+        <!-- Countdown -->
+
+        <div class="countdown">
+
+            <div>
+                <span id="days">00</span>
+                <small>DAYS</small>
+            </div>
+
+            <div>
+                <span id="hours">00</span>
+                <small>HOURS</small>
+            </div>
+
+            <div>
+                <span id="minutes">00</span>
+                <small>MINUTES</small>
+            </div>
+
+            <div>
+                <span id="seconds">00</span>
+                <small>SECONDS</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================= -->
+    <!-- MAIN INVITATION -->
+    <!-- ========================================= -->
+
+    <main id="invitation">
+
+
+        <!-- ========================================= -->
+        <!-- 2. ATURCARA MAJLIS -->
+        <!-- ========================================= -->
+
+        <section id="aturcara" class="section">
+
+            <p class="section-label">THE CELEBRATION</p>
+
+            <h2>ATURCARA MAJLIS</h2>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <span class="timeline-number">01</span>
+
+                    <div>
+                        <h3>KETIBAAN TETAMU</h3>
+                        <p>7:30 PM</p>
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <span class="timeline-number">02</span>
+
+                    <div>
+                        <h3>KETIBAAN PENGANTIN</h3>
+                        <p>8:00 PM</p>
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <span class="timeline-number">03</span>
+
+                    <div>
+                        <h3>MAJLIS BERSURAI</h3>
+                        <p>11:00 PM</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================= -->
+        <!-- 3. VENUE -->
+        <!-- ========================================= -->
+
+        <section id="venue" class="section">
+
+            <p class="section-label">WHERE TO FIND US</p>
+
+            <h2>LOKASI</h2>
+
+
+            <div class="venue-card">
+
+                <h3>DEWAN RUMAH ABANG JAMIL</h3>
+
+                <p>
+                    Alamat venue akan diletakkan di sini.
+                </p>
+
+
+                <!-- Replace the # with your Waze link later -->
+
+                <a
+                    href="#"
+                    target="_blank"
+                    class="map-button">
+
+                    OPEN MAP · WAZE
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================= -->
+        <!-- 4. RSVP -->
+        <!-- ========================================= -->
+
+        <section id="rsvp" class="section">
+
+            <p class="section-label">WE HOPE TO SEE YOU</p>
+
+            <h2>RSVP</h2>
+
+            <p class="section-description">
+                Kami amat berbesar hati untuk meraikan
+                hari istimewa ini bersama anda.
+            </p>
+
+
+            <form id="rsvpForm">
+
+
+                <label for="guestName">
+                    NAMA
+                </label>
+
+                <input
+                    type="text"
+                    id="guestName"
+                    name="guestName"
+                    placeholder="Nama anda"
+                    required
+                >
+
+
+                <label>
+                    KEHADIRAN
+                </label>
+
+                <div class="attendance">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="HADIR"
+                            required
+                        >
+                        YA, SAYA HADIR ❤️
+                    </label>
+
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="attendance"
+                            value="TIDAK HADIR"
+                        >
+                        MAAF, TIDAK DAPAT HADIR
+                    </label>
+
+                </div>
+
+
+                <label for="pax">
+                    BILANGAN TETAMU
+                </label>
+
+                <input
+                    type="number"
+                    id="pax"
+                    name="pax"
+                    min="1"
+                    max="10"
+                    value="1"
+                >
+
+
+                <label for="rsvpMessage">
+                    UCAPAN UNTUK PENGANTIN
+                </label>
+
+                <textarea
+                    id="rsvpMessage"
+                    name="rsvpMessage"
+                    placeholder="Tulis ucapan anda..."
+                    rows="4"
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    HANTAR RSVP
+
+                </button>
+
+            </form>
+
+
+            <div
+                id="rsvpThankYou"
+                class="thank-you"
+                style="display:none;">
+
+                ❤️
+
+                <h3>TERIMA KASIH!</h3>
+
+                <p>
+                    Kami tak sabar untuk berjumpa
+                    dengan anda.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================= -->
+        <!-- 5. GUESTBOOK -->
+        <!-- ========================================= -->
+
+        <section id="guestbook" class="section">
+
+            <p class="section-label">A LITTLE LOVE FROM YOU</p>
+
+            <h2>UCAPAN</h2>
+
+            <p class="section-description">
+
+                Leave a little love for
+                the newlyweds ❤️
+
+            </p>
+
+
+            <form id="guestbookForm">
+
+
+                <label for="messageName">
+                    NAMA
+                </label>
+
+                <input
+                    type="text"
+                    id="messageName"
+                    name="messageName"
+                    placeholder="Nama anda"
+                    required
+                >
+
+
+                <label for="guestMessage">
+                    UCAPAN
+                </label>
+
+                <textarea
+                    id="guestMessage"
+                    name="guestMessage"
+                    placeholder="Tulis ucapan anda di sini..."
+                    rows="5"
+                    required
+                ></textarea>
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    HANTAR UCAPAN ❤️
+
+                </button>
+
+            </form>
+
+
+            <!-- Guestbook messages will appear here later -->
+
+            <div
+                id="messages"
+                class="messages">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================= -->
+        <!-- 6. CLOSING -->
+        <!-- ========================================= -->
+
+        <section class="closing">
+
+            <h2>SYAZA & AISY</h2>
+
+            <p>
+                05 · 12 · 2026
+            </p>
+
+            <p class="closing-message">
+                Thank you for being part of
+                our special day. ❤️
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ========================================= -->
+    <!-- FLOATING MUSIC BUTTON -->
+    <!-- ========================================= -->
+
+    <button
+        id="musicButton"
+        class="music-button"
+        onclick="toggleMusic()">
+
+        ♫
+
+    </button>
+
+
+    <!-- Music file will be added later -->
+
+    <audio
+        id="weddingMusic"
+        loop>
+
+        <source
+            src="music.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
