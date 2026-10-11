@@ -223,26 +223,79 @@ img {
 ========================================= */
 
 .music-section {
-    text-align: center;
+    position: fixed;
 
-    margin-bottom: 70px;
+    top: 18px;
+    right: 18px;
+
+    z-index: 9999;
+
+    margin: 0;
+
+    width: auto;
 }
 
+
 .music-button {
-    width: 70px;
-    height: 70px;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    padding: 0;
 
     border-radius: 50%;
 
-    border: 2px solid #b52121;
+    border: 2px solid #183d22;
 
     background: #f8f4df;
 
-    color: #b52121;
+    color: #183d22;
 
-    font-size: 28px;
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1;
 
     cursor: pointer;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.music-button:hover {
+    transform: scale(1.05);
+}
+
+
+.music-button:active {
+    transform: scale(0.95);
+}
+
+
+@media (max-width: 600px) {
+
+    .music-section {
+        top: 12px;
+        right: 12px;
+    }
+
+    .music-button {
+        width: 42px;
+        height: 42px;
+
+        font-size: 16px;
+    }
+
 }
 
 
@@ -1229,31 +1282,28 @@ input:checked + .radio-circle {
 
     <section class="music-section">
 
-        <h2 class="section-title">
-            🎵 Music
-        </h2>
+    <button
+        class="music-button"
+        onclick="toggleMusic()"
+        id="musicButton"
+        aria-label="Play or pause music">
 
-        <button
-            class="music-button"
-            onclick="toggleMusic()"
-            id="musicButton">
+        ▶
 
-            ▶
-
-        </button>
+    </button>
 
 
-        <audio
-            id="weddingMusic"
-            loop>
+    <audio
+        id="weddingMusic"
+        loop>
 
-            <source
-                src="music.mp3"
-                type="audio/mpeg">
+        <source
+            src="music.mp3"
+            type="audio/mpeg">
 
-        </audio>
+    </audio>
 
-    </section>
+</section>
 
 
 
@@ -1562,6 +1612,34 @@ function openInvitation() {
             behavior: "smooth"
         });
 
+
+    const music =
+        document.getElementById(
+            "weddingMusic"
+        );
+
+
+    const musicButton =
+        document.getElementById(
+            "musicButton"
+        );
+
+
+    music.play()
+        .then(function() {
+
+            musicButton.innerText = "Ⅱ";
+
+        })
+        .catch(function(error) {
+
+            console.log(
+                "Music could not autoplay:",
+                error
+            );
+
+        });
+
 }
 
 
@@ -1696,15 +1774,13 @@ function toggleMusic() {
 
         music.play();
 
-        musicButton.innerText =
-            "⏸";
+        musicButton.innerText = "Ⅱ";
 
     } else {
 
         music.pause();
 
-        musicButton.innerText =
-            "▶";
+        musicButton.innerText = "▶";
 
     }
 
