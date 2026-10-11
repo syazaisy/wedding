@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -9,16 +10,6 @@
 
     <title>Syaza + Aisy | Wedding Day</title>
 
-    <!-- Handwriting font -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
-          rel="stylesheet">
 
     <style>
 
@@ -28,22 +19,31 @@
             padding: 0;
         }
 
+
         html,
         body {
+
             width: 100%;
             height: 100%;
+
             overflow: hidden;
+
         }
+
 
         body {
-            background: #f8f4df;
+
+            background: #f7f1d9;
+
         }
 
-        /* =========================================
-           PAGE 1
-           ========================================= */
+
+        /* ==========================================
+           PAGE 1 — COVER
+        ========================================== */
 
         .cover-page {
+
             position: relative;
 
             width: 100vw;
@@ -51,18 +51,15 @@
 
             overflow: hidden;
 
-            background: #f8f4df;
+            background: #f7f1d9;
+
         }
 
-        /*
-        Your original artwork.
 
-        IMPORTANT:
-        The filename must match the file you uploaded
-        to GitHub.
-        */
+        /* YOUR ORIGINAL IMAGE */
 
         .cover-image {
+
             position: absolute;
 
             width: 100%;
@@ -76,291 +73,82 @@
             object-position: center center;
 
             display: block;
+
         }
 
 
-        /* =========================================
-           OPEN INVITATION BUTTON
-           ========================================= */
+        /* ==========================================
+           INVISIBLE OPEN INVITATION CLICK AREA
+        ========================================== */
 
-     
+        .open-invitation-click {
 
-        /* =========================================
-           HEARTBEAT
-           ========================================= */
+            position: absolute;
 
-        .heartbeat {
+            left: 50%;
 
-            animation: heartbeat 1.5s ease-in-out infinite;
+            bottom: 5%;
 
-            transform-origin: center;
-        }
+            transform: translateX(-50%);
 
-        @keyframes heartbeat {
+            width: 65%;
 
-            0% {
-                transform: scale(1);
-            }
+            height: 12%;
 
-            10% {
-                transform: scale(1.08);
-            }
+            background: transparent;
 
-            20% {
-                transform: scale(1);
-            }
+            border: none;
 
-            30% {
-                transform: scale(1.08);
-            }
+            cursor: pointer;
 
-            40% {
-                transform: scale(1);
-            }
+            z-index: 10;
 
-            100% {
-                transform: scale(1);
-            }
         }
 
 
-        /* =========================================
+        /* ==========================================
            MOBILE
-           ========================================= */
+        ========================================== */
 
-    /* =========================================
-   INVISIBLE OPEN INVITATION CLICK AREA
-   ========================================= */
+        @media (max-width: 600px) {
 
-.open-invitation-click {
-    position: absolute;
+            .cover-image {
 
-    left: 50%;
-    bottom: 4%;
+                object-fit: contain;
 
-    transform: translateX(-50%);
+            }
 
-    width: 70%;
-    height: 13%;
 
-    background: transparent;
+            .open-invitation-click {
 
-    cursor: pointer;
+                width: 75%;
 
-    z-index: 10;
-}
+                height: 13%;
 
+                bottom: 4%;
 
-@media (max-width: 600px) {
+            }
 
-    .cover-image {
-        object-fit: cover;
-    }
+        }
 
-}
+    </style>
 
-
-/* =========================================
-   PAGE 2
-   ========================================= */
-
-.page2 {
-    position: relative;
-    width: 100vw;
-    min-height: 100vh;
-    background: #f8f4df;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-}
-
-.page2-art {
-    position: relative;
-
-    width: min(100vw, 56.25vh);
-    aspect-ratio: 9 / 16;
-
-    overflow: hidden;
-}
-
-/* Main artwork */
-
-.page2-base {
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    left: 0;
-    top: 0;
-
-    display: block;
-}
-
-/* =========================================
-   TITLE
-   ========================================= */
-
-.page2-title {
-    position: absolute;
-
-    left: 0;
-    top: 2.2%;
-
-    width: 100%;
-    height: auto;
-
-    opacity: 0;
-
-    animation:
-        page2Write 2s ease forwards;
-}
-
-
-/* =========================================
-   PARAGRAPH
-   ========================================= */
-
-.page2-paragraph {
-    position: absolute;
-
-    left: 0;
-    top: 12.5%;
-
-    width: 100%;
-    height: auto;
-
-    opacity: 0;
-
-    mix-blend-mode: multiply;
-
-    animation:
-        page2Write 3s ease forwards;
-
-    animation-delay: 1.5s;
-}
-
-
-/* =========================================
-   HEART ON NUMBER 5
-   ========================================= */
-
-.page2-heart5 {
-    position: absolute;
-
-    left: 69%;
-    top: 59%;
-
-    width: 13%;
-    height: auto;
-
-    mix-blend-mode: multiply;
-
-    transform-origin: center;
-
-    animation:
-        page2Heartbeat 1.5s ease-in-out infinite;
-}
-
-/* =========================================
-   BLINKING BULBS
-   ========================================= */
-
-.page2-heart5 {
-    position: absolute;
-
-    left: 69%;
-    top: 59%;
-
-    width: 13%;
-    height: auto;
-
-    transform-origin: center;
-
-    animation:
-        page2Heartbeat 1.5s ease-in-out infinite;
-}
-
-
-/* =========================================
-   ANIMATIONS
-   ========================================= */
-
-@keyframes page2Write {
-
-    0% {
-        opacity: 1;
-        clip-path: inset(0 100% 0 0);
-    }
-
-    100% {
-        opacity: 1;
-        clip-path: inset(0 0 0 0);
-    }
-
-}
-
-
-@keyframes page2Heartbeat {
-
-    0% {
-        transform: scale(1);
-    }
-
-    10% {
-        transform: scale(1.08);
-    }
-
-    20% {
-        transform: scale(1);
-    }
-
-    30% {
-        transform: scale(1.08);
-    }
-
-    40% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-
-}
-
-
-@keyframes page2Blink {
-    0% {
-        opacity: 0.45;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0.45;
-    }
-}
-</style>
 </head>
 
 
 <body>
 
-    <!-- =========================================
-         PAGE 1 — COVER
-         ========================================= -->
+
+    <!-- ==========================================
+         PAGE 1
+    ========================================== -->
 
     <section
         id="page1"
         class="cover-page">
 
-        <!-- YOUR EXACT COVER IMAGE -->
+
+        <!-- ORIGINAL COVER IMAGE -->
 
         <img
             src="page1-cover.png.png"
@@ -368,69 +156,39 @@
             class="cover-image">
 
 
-       <!-- INVISIBLE CLICK AREA OVER ORIGINAL BUTTON -->
+        <!--
+            Invisible clickable area.
 
-<div
-    class="open-invitation-click"
-    onclick="openInvitation()">
-</div>
+            The actual Open Invitation
+            design is already inside the PNG.
+        -->
+
+        <button
+            class="open-invitation-click"
+            onclick="openInvitation()"
+            aria-label="Open Invitation">
+        </button>
+
 
     </section>
-    <!-- =========================================
-     PAGE 2
-     ========================================= -->
 
-<section id="page2" class="page2">
-
-    <div class="page2-art">
-
-        <!-- Main static artwork -->
-        <img
-            src="page2-base.png"
-            class="page2-base"
-            alt="Wedding Save the Date">
-
-        <!-- Animated title -->
-        <img
-            src="page2-title.png"
-            class="page2-title"
-            alt="Tahukah anda?">
-
-        <!-- Animated paragraph -->
-        <img
-            src="page2-paragraph.png"
-            class="page2-paragraph"
-            alt="Masa berlalu begitu pantas...">
-
-        <!-- Heart around number 5 -->
-        <img
-            src="page2-heart5.png"
-            class="page2-heart5"
-            alt="5">
-
-        <!-- Blinking lights -->
-        <img
-            src="page2-bulbs.png"
-            class="page2-bulbs"
-            alt="Christmas lights">
-
-    </div>
-
-</section>
 
 
     <script>
 
         function openInvitation() {
 
-
-document.getElementById("page2").scrollIntoView({
-    behavior: "smooth"
-});
+            /*
+             * Page 2 will be added later.
+             *
+             * For now, clicking the button
+             * does nothing.
+             */
 
         }
 
     </script>
+
 
 </body>
 
