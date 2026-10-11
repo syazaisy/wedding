@@ -10,10 +10,10 @@
 
 <title>Syaza + Aisy | Wedding Day</title>
 
-
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
 
 /* =========================================
    GENERAL
@@ -108,6 +108,7 @@ img {
 ========================================= */
 
 .main-artwork-wrapper {
+
     position: relative;
 
     width: 100%;
@@ -117,170 +118,329 @@ img {
 }
 
 .main-artwork {
+
     width: 100%;
     height: auto;
 }
-
-
 /* =========================================
-   LOCATION HOTSPOTS
-========================================= */
+   CLICKABLE LINKS INSIDE LOCATION HEART
+   ========================================= */
 
 .location-hotspot {
     position: absolute;
     z-index: 20;
-
     display: block;
-
     background: transparent;
     border: none;
     outline: none;
-
     cursor: pointer;
 }
 
-
-/* WAZE */
-
+/* TEMPORARY WAZE CLICK AREA */
 .waze-hotspot {
     left: 51%;
     top: 58%;
-
     width: 27%;
     height: 2.6%;
 }
 
-
-/* GOOGLE MAPS */
-
+/* TEMPORARY GOOGLE MAPS CLICK AREA */
 .maps-hotspot {
     left: 51%;
     top: 61.2%;
-
     width: 27%;
     height: 2.6%;
 }
 
 /* =========================================
-   COUNTDOWN
+   RSVP
 ========================================= */
 
-.countdown-section {
-    width: 90%;
-    max-width: 600px;
-
-    margin: 0 auto 70px;
-
+.rsvp-section {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 90px;
+    padding: 20px 15px 0;
     text-align: center;
+    position: relative;
 }
 
-.section-title {
-    font-size: 42px;
-    font-weight: normal;
-
-    color: #183d22;
-
-    margin-bottom: 25px;
+.rsvp-decoration {
+    position: absolute;
+    top: 10px;
+    left: 8%;
+    font-family: "Caveat", cursive;
+    font-size: 55px;
+    color: #d51f28;
+    transform: rotate(-15deg);
+    line-height: 1;
 }
 
-.countdown {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 10px;
+.rsvp-decoration::after {
+    content: "♡";
+    position: absolute;
+    left: 520px;
+    top: 10px;
+    font-size: 55px;
+    color: #d51f28;
+    transform: rotate(15deg);
 }
 
-.count-box {
-    border: 2px solid #b52121;
-
-    padding: 15px 5px;
-
-    background: #f8f4df;
-}
-
-.count-number {
-    display: block;
-
-    font-size: 30px;
-
-    color: #b52121;
-}
-
-.count-label {
-    font-size: 12px;
-
-    text-transform: uppercase;
-
-    color: #183d22;
-}
-
-/* =========================================
-   MUSIC
-========================================= */
-
-.music-section {
-    position: fixed;
-
-    top: 18px;
-    right: 18px;
-
-    z-index: 9999;
-
+.rsvp-title {
     margin: 0;
-
-    width: auto;
+    font-family: "Caveat", cursive;
+    font-size: 92px;
+    font-weight: 500;
+    line-height: 1;
+    color: #155b43;
+    letter-spacing: 1px;
 }
 
+.rsvp-subtitle {
+    margin: 15px auto 55px;
+    max-width: 600px;
+    font-family: "Caveat", cursive;
+    font-size: 29px;
+    line-height: 1.35;
+    color: #155b43;
+}
 
-.music-button {
+.rsvp-card {
+    position: relative;
+    width: 100%;
+    padding: 75px 65px 70px;
+    background: linear-gradient(145deg, #d4262e 0%, #c91f27 45%, #b91820 100%);
+    border-radius: 42px;
+    border: 5px solid #f4bfa0;
+    box-shadow:
+        0 0 0 5px rgba(244,191,160,0.35),
+        0 12px 0 rgba(188,139,109,0.28);
+    text-align: left;
+    overflow: visible;
+}
+
+.rsvp-card::before {
+    content: "";
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 70px;
+    background: radial-gradient(ellipse at center, #f02b32 0%, #c71921 65%, #a91219 100%);
+    border-radius: 70% 30% 70% 30%;
+    box-shadow:
+        -65px 5px 0 -12px #d52129,
+        65px 5px 0 -12px #d52129;
+    z-index: 5;
+}
+
+.rsvp-card::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #a91219;
+    border: 4px solid #e84247;
+    z-index: 8;
+}
+
+.rsvp-label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #ffe2c9;
+    font-family: "Caveat", cursive;
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.rsvp-card .rsvp-label:first-child {
+    margin-top: 0;
+}
+
+.rsvp-input,
+.rsvp-select {
+    width: 100%;
+    height: 62px;
+    padding: 0 22px;
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 17px;
+    background: #fffdf7;
+    color: #183d22;
+    font-family: "DM Sans", sans-serif;
+    font-size: 17px;
+    outline: none;
+}
+
+.rsvp-input::placeholder {
+    color: #929292;
+}
+
+.rsvp-input:focus,
+.rsvp-select:focus {
+    border-color: #ffe3d0;
+    box-shadow: 0 0 0 3px rgba(255,226,201,0.25);
+}
+
+.rsvp-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    width: 100%;
+}
+
+.rsvp-option {
+    position: relative;
     display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: 72px;
+    padding: 14px 22px;
+    background: #fffdf7;
+    border-radius: 17px;
+    color: #183d22;
+    font-family: "DM Sans", sans-serif;
+    font-size: 17px;
+    cursor: pointer;
+}
 
+.rsvp-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.radio-circle {
+    flex-shrink: 0;
+    width: 29px;
+    height: 29px;
+    border: 3px solid #d5252d;
+    border-radius: 50%;
+    background: white;
+}
+
+.rsvp-option:nth-child(2) .radio-circle {
+    border-color: #155b43;
+}
+
+.rsvp-option input:checked + .radio-circle {
+    background: #d5252d;
+    box-shadow: inset 0 0 0 6px white;
+}
+
+.rsvp-option:nth-child(2) input:checked + .radio-circle {
+    background: #155b43;
+}
+
+.rsvp-select {
+    cursor: pointer;
+}
+
+.rsvp-submit {
+    position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 46px;
-    height: 46px;
-
-    padding: 0;
-
-    border-radius: 50%;
-
-    border: 2px solid #183d22;
-
-    background: #f8f4df;
-
-    color: #183d22;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 18px;
-
-    line-height: 1;
-
+    width: 100%;
+    height: 75px;
+    margin-top: 38px;
+    padding: 10px 90px 10px 20px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+    background: linear-gradient(180deg, #176147 0%, #104f3a 100%);
+    color: white;
+    font-family: "Caveat", cursive;
+    font-size: 43px;
+    font-weight: 500;
     cursor: pointer;
-
     box-shadow:
-        0 2px 8px rgba(0,0,0,0.12);
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+        inset 0 2px 4px rgba(255,255,255,0.15),
+        0 3px 0 rgba(0,0,0,0.18);
 }
 
-
-.music-button:hover {
-    transform: scale(1.05);
+.rsvp-submit::after {
+    content: "➤";
+    position: absolute;
+    right: 25%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-18deg);
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    color: white;
 }
 
-
-.music-button:active {
-    transform: scale(0.95);
+.rsvp-success {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: #fffdf7;
+    border-radius: 15px;
+    color: #183d22;
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-size: 25px;
 }
-
 
 @media (max-width: 600px) {
+    .rsvp-section {
+        width: 100%;
+        padding: 20px 12px 0;
+    }
+
+    .rsvp-decoration {
+        display: none;
+    }
+
+    .rsvp-title {
+        font-size: 65px;
+    }
+
+    .rsvp-subtitle {
+        font-size: 23px;
+        margin-bottom: 48px;
+    }
+
+    .rsvp-card {
+        padding: 65px 22px 45px;
+        border-radius: 32px;
+    }
+
+    .rsvp-label {
+        font-size: 27px;
+    }
+
+    .rsvp-options {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .rsvp-option {
+        min-height: 62px;
+        font-size: 15px;
+    }
+
+    .rsvp-input,
+    .rsvp-select {
+        height: 56px;
+        font-size: 15px;
+    }
+
+    .rsvp-submit {
+        height: 65px;
+        font-size: 36px;
+        padding-right: 70px;
+    }
+
+    .rsvp-submit::after {
+        right: 18%;
+        font-size: 30px;
+    }
 
     .music-section {
         top: 12px;
@@ -290,617 +450,121 @@ img {
     .music-button {
         width: 42px;
         height: 42px;
-
         font-size: 16px;
     }
-
 }
-
 
 /* =========================================
-   RSVP
+   COUNTDOWN
 ========================================= */
 
-.rsvp-section {
-    width: 100%;
-    max-width: 760px;
+.countdown-section {
 
-    margin: 0 auto 90px;
-
-    padding: 20px 15px 0;
-
-    text-align: center;
-
-    position: relative;
-}
-
-
-/* =========================================
-   RSVP TITLE
-========================================= */
-
-.rsvp-decoration {
-    position: absolute;
-
-    top: 10px;
-    left: 8%;
-
-    font-family: "Caveat", cursive;
-
-    font-size: 55px;
-
-    color: #d51f28;
-
-    transform: rotate(-15deg);
-
-    line-height: 1;
-}
-
-
-/* Right decorative heart */
-
-.rsvp-decoration::after {
-    content: "♡";
-
-    position: absolute;
-
-    left: 520px;
-    top: 10px;
-
-    font-size: 55px;
-
-    color: #d51f28;
-
-    transform: rotate(15deg);
-}
-
-
-/* =========================================
-   RSVP TITLE
-========================================= */
-
-.rsvp-title {
-    position: relative;
-
-    margin: 0;
-
-    font-family: "Caveat", cursive;
-
-    font-size: 92px;
-
-    font-weight: 500;
-
-    line-height: 1;
-
-    color: #155b43;
-
-    letter-spacing: 1px;
-}
-
-
-/* =========================================
-   RSVP SUBTITLE
-========================================= */
-
-.rsvp-subtitle {
-    margin: 15px auto 55px;
+    width: 90%;
 
     max-width: 600px;
 
-    font-family: "Caveat", cursive;
-
-    font-size: 29px;
-
-    line-height: 1.35;
-
-    color: #155b43;
-}
-
-
-/* =========================================
-   RSVP CARD
-========================================= */
-
-.rsvp-card {
-    position: relative;
-
-    width: 100%;
-
-    padding: 75px 65px 70px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #d4262e 0%,
-            #c91f27 45%,
-            #b91820 100%
-        );
-
-    border-radius: 42px;
-
-    border: 5px solid #f4bfa0;
-
-    box-shadow:
-        0 0 0 5px rgba(244,191,160,0.35),
-        0 12px 0 rgba(188,139,109,0.28);
-
-    text-align: left;
-
-    overflow: visible;
-}
-
-
-/* =========================================
-   DECORATIVE BOW
-========================================= */
-
-.rsvp-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: -42px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 150px;
-    height: 70px;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            #f02b32 0%,
-            #c71921 65%,
-            #a91219 100%
-        );
-
-    border-radius: 70% 30% 70% 30%;
-
-    box-shadow:
-        -65px 5px 0 -12px #d52129,
-         65px 5px 0 -12px #d52129;
-
-    z-index: 5;
-}
-
-
-/* Bow centre */
-
-.rsvp-card::after {
-    content: "";
-
-    position: absolute;
-
-    top: -20px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 28px;
-    height: 28px;
-
-    border-radius: 50%;
-
-    background: #a91219;
-
-    border: 4px solid #e84247;
-
-    z-index: 8;
-}
-
-
-/* =========================================
-   FORM LABELS
-========================================= */
-
-.rsvp-label {
-    display: block;
-
-    margin-top: 25px;
-    margin-bottom: 10px;
-
-    color: #ffe2c9;
-
-    font-family: "Caveat", cursive;
-
-    font-size: 31px;
-
-    font-weight: 500;
-
-    line-height: 1.1;
-}
-
-
-/* First label */
-
-.rsvp-card .rsvp-label:first-child {
-    margin-top: 0;
-}
-
-
-/* =========================================
-   TEXT INPUT
-========================================= */
-
-.rsvp-input,
-.rsvp-select {
-    width: 100%;
-
-    height: 62px;
-
-    padding: 0 22px;
-
-    border: 2px solid rgba(255,255,255,0.8);
-
-    border-radius: 17px;
-
-    background: #fffdf7;
-
-    color: #183d22;
-
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 17px;
-
-    outline: none;
-
-    box-shadow:
-        inset 0 1px 2px rgba(0,0,0,0.04);
-}
-
-
-.rsvp-input::placeholder {
-    color: #929292;
-}
-
-
-.rsvp-input:focus,
-.rsvp-select:focus {
-    border-color: #ffe3d0;
-
-    box-shadow:
-        0 0 0 3px rgba(255,226,201,0.25);
-}
-
-
-/* =========================================
-   ATTENDANCE OPTIONS
-========================================= */
-
-.rsvp-options {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 18px;
-
-    width: 100%;
-}
-
-
-.rsvp-option {
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    min-height: 72px;
-
-    padding: 14px 22px;
-
-    background: #fffdf7;
-
-    border-radius: 17px;
-
-    color: #183d22;
-
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 17px;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.rsvp-option:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 5px 12px rgba(0,0,0,0.12);
-}
-
-
-/* Hide original radio */
-
-.rsvp-option input {
-    position: absolute;
-
-    opacity: 0;
-
-    pointer-events: none;
-}
-
-
-/* Custom radio */
-
-.radio-circle {
-    flex-shrink: 0;
-
-    width: 29px;
-    height: 29px;
-
-    border: 3px solid #d5252d;
-
-    border-radius: 50%;
-
-    background: white;
-}
-
-
-/* Second option green */
-
-.rsvp-option:nth-child(2) .radio-circle {
-    border-color: #155b43;
-}
-
-
-/* Selected radio */
-
-.rsvp-option input:checked + .radio-circle {
-    background: #d5252d;
-
-    box-shadow:
-        inset 0 0 0 6px white;
-}
-
-
-.rsvp-option:nth-child(2)
-input:checked + .radio-circle {
-    background: #155b43;
-}
-
-
-/* =========================================
-   SELECT ARROW
-========================================= */
-
-.rsvp-select {
-    appearance: auto;
-
-    cursor: pointer;
-}
-
-
-/* =========================================
-   HANTAR BUTTON
-========================================= */
-
-.rsvp-submit {
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-
-    height: 75px;
-
-    margin-top: 38px;
-
-    padding: 10px 90px 10px 20px;
-
-    border: 2px solid rgba(255,255,255,0.35);
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #176147 0%,
-            #104f3a 100%
-        );
-
-    color: white;
-
-    font-family: "Caveat", cursive;
-
-    font-size: 43px;
-
-    font-weight: 500;
-
-    cursor: pointer;
-
-    box-shadow:
-        inset 0 2px 4px rgba(255,255,255,0.15),
-        0 3px 0 rgba(0,0,0,0.18);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.rsvp-submit::after {
-    content: "➤";
-
-    position: absolute;
-
-    right: 25%;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%)
-        rotate(-18deg);
-
-    font-family: Arial, sans-serif;
-
-    font-size: 40px;
-
-    color: white;
-}
-
-
-.rsvp-submit:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        inset 0 2px 4px rgba(255,255,255,0.15),
-        0 5px 0 rgba(0,0,0,0.18);
-}
-
-
-.rsvp-submit:active {
-    transform: translateY(1px);
-}
-
-
-.rsvp-submit:disabled {
-    opacity: 0.6;
-
-    cursor: not-allowed;
-}
-
-
-/* =========================================
-   CARD DECORATIONS
-========================================= */
-
-/* Small heart bottom right */
-
-.rsvp-card .rsvp-success::after {
-    content: "♡";
-}
-
-
-/* =========================================
-   RSVP SUCCESS
-========================================= */
-
-.rsvp-success {
-    display: none;
-
-    margin-top: 25px;
-
-    padding: 20px;
-
-    background: #fffdf7;
-
-    border-radius: 15px;
-
-    color: #183d22;
+    margin: 0 auto 70px;
 
     text-align: center;
+}
 
-    font-family: "Caveat", cursive;
+.section-title {
 
-    font-size: 25px;
+    font-size: 42px;
 
-    line-height: 1.4;
+    font-weight: normal;
+
+    color: #183d22;
+
+    margin-bottom: 25px;
+}
+
+.countdown {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.count-box {
+
+    border: 2px solid #b52121;
+
+    padding: 15px 5px;
+
+    background: #f8f4df;
+}
+
+.count-number {
+
+    display: block;
+
+    font-size: 30px;
+
+    color: #b52121;
+}
+
+.count-label {
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    color: #183d22;
 }
 
 
 /* =========================================
-   MOBILE RSVP
+   MUSIC
 ========================================= */
 
-@media (max-width: 600px) {
-
-    .rsvp-section {
-        width: 100%;
-
-        padding: 20px 12px 0;
-    }
-
-
-    .rsvp-decoration {
-        display: none;
-    }
-
-
-    .rsvp-decoration::after {
-        display: none;
-    }
-
-
-    .rsvp-title {
-        font-size: 65px;
-    }
-
-
-    .rsvp-subtitle {
-        font-size: 23px;
-
-        margin-bottom: 48px;
-    }
-
-
-    .rsvp-card {
-        padding: 65px 22px 45px;
-
-        border-radius: 32px;
-    }
-
-
-    .rsvp-label {
-        font-size: 27px;
-    }
-
-
-    .rsvp-options {
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-    }
-
-
-    .rsvp-option {
-        min-height: 62px;
-
-        font-size: 15px;
-    }
-
-
-    .rsvp-input,
-    .rsvp-select {
-        height: 56px;
-
-        font-size: 15px;
-    }
-
-
-    .rsvp-submit {
-        height: 65px;
-
-        font-size: 36px;
-
-        padding-right: 70px;
-    }
-
-
-    .rsvp-submit::after {
-        right: 18%;
-
-        font-size: 30px;
-    }
-
+.music-section {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    margin: 0;
 }
+
+.music-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid #183d22;
+    background: #f8f4df;
+    color: #183d22;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.05);
+}
+
+.music-button:active {
+    transform: scale(0.95);
+}
+
 /* =========================================
    GUESTBOOK
 ========================================= */
 
 .guestbook-section {
+
     width: 90%;
+
     max-width: 600px;
 
     margin: 0 auto 80px;
@@ -908,15 +572,8 @@ input:checked + .radio-circle {
     text-align: center;
 }
 
-.form-description {
-    color: #183d22;
-
-    line-height: 1.6;
-
-    margin-bottom: 25px;
-}
-
 .guestbook-form {
+
     display: flex;
 
     flex-direction: column;
@@ -928,52 +585,8 @@ input:checked + .radio-circle {
     margin-bottom: 40px;
 }
 
-.guestbook-form input,
-.guestbook-form textarea {
-    width: 100%;
-
-    padding: 14px 15px;
-
-    border: 1px solid #d8cdb2;
-
-    border-radius: 12px;
-
-    background: white;
-
-    font-family: Georgia, serif;
-
-    font-size: 15px;
-
-    color: #183d22;
-
-    outline: none;
-}
-
-.guestbook-form textarea {
-    min-height: 130px;
-
-    resize: vertical;
-}
-
-.submit-button {
-    padding: 14px 20px;
-
-    border: none;
-
-    border-radius: 14px;
-
-    background: #5d8c4a;
-
-    color: #f8d2b5;
-
-    font-family: Georgia, serif;
-
-    font-size: 17px;
-
-    cursor: pointer;
-}
-
 .guestbook-messages {
+
     display: flex;
 
     flex-direction: column;
@@ -982,6 +595,7 @@ input:checked + .radio-circle {
 }
 
 .guest-message {
+
     background: white;
 
     padding: 20px;
@@ -995,6 +609,7 @@ input:checked + .radio-circle {
 }
 
 .guest-name {
+
     color: #b52121;
 
     font-size: 18px;
@@ -1003,6 +618,7 @@ input:checked + .radio-circle {
 }
 
 .guest-text {
+
     color: #183d22;
 
     line-height: 1.6;
@@ -1014,6 +630,7 @@ input:checked + .radio-circle {
 ========================================= */
 
 .footer {
+
     text-align: center;
 
     padding: 40px 20px;
@@ -1031,91 +648,45 @@ input:checked + .radio-circle {
 @media (max-width: 600px) {
 
     .cover-image {
+
         width: 100%;
+
         max-width: none;
     }
 
     .open-invitation-click {
+
         width: 80%;
+
         height: 13%;
+
         bottom: 5%;
     }
 
     .section-title {
+
         font-size: 34px;
     }
 
     .count-number {
+
         font-size: 24px;
     }
 
     .location-buttons {
+
         flex-direction: column;
+
         margin-top: -10px;
     }
 
-    .rsvp-title {
-        font-size: 54px;
-    }
-
-    .rsvp-card {
-        padding: 32px 20px 28px;
-    }
-
-    .rsvp-options {
-        flex-direction: column;
-    }
-
-    .rsvp-option {
-        width: 100%;
-    }
-
 }
-
-
-/* =========================================
-   VERY SMALL MOBILE
-========================================= */
-
-@media (max-width: 380px) {
-
-    .countdown {
-        gap: 5px;
-    }
-
-    .count-box {
-        padding: 12px 3px;
-    }
-
-    .count-number {
-        font-size: 21px;
-    }
-
-    .count-label {
-        font-size: 10px;
-    }
-
-}
-
-
-/* =========================================
-   LOADING
-========================================= */
-
-.loading {
-    color: #183d22;
-
-    text-align: center;
-
-    padding: 20px;
-}
-
 </style>
 
 </head>
 
-
 <body>
+
 
 
 <!-- =========================================
@@ -1128,8 +699,7 @@ input:checked + .radio-circle {
     <img
         src="page1-cover.png.png"
         alt="Syaza + Aisy Wedding Day"
-        class="cover-image"
-    >
+        class="cover-image">
 
     <!--
         Invisible button placed over
@@ -1157,281 +727,166 @@ input:checked + .radio-circle {
 
 
     <!-- =====================================
-         MAIN WEDDING ARTWORK
+         YOUR MAIN WEDDING ARTWORK
     ====================================== -->
 
     <div class="main-artwork-wrapper">
 
-        <img
-            src="invitation-content2.png"
-            alt="Wedding invitation"
-            class="main-artwork"
-        >
+    <img
+        src="invitation-content2.png"
+        alt="Wedding invitation"
+        class="main-artwork">
 
+    <!-- INVISIBLE WAZE CLICK AREA -->
+    <a
+        href="https://waze.com/ul/hw234w0bkw"
+        target="_blank"
+        rel="noopener"
+        class="location-hotspot waze-hotspot"
+        aria-label="Open Waze">
+    </a>
 
-        <!-- INVISIBLE WAZE CLICK AREA -->
+    <!-- INVISIBLE GOOGLE MAPS CLICK AREA -->
+    <a
+        href="https://www.google.com/maps/dir//Rumah+Abang+Jamil+BATU+PAHAT,+Lot+2199,+Jalan+Peserai+Lama,+Taman+Muhibbah,+83000+Batu+Pahat,+Johor/@3.103049,101.627155,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d057693ec826af:0xce495a0b5b097aaa!2m2!1d102.9204243!2d1.8501724?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener"
+        class="location-hotspot maps-hotspot"
+        aria-label="Open Google Maps">
+    </a>
 
-        <a
-            href="https://waze.com/ul/hw234w0bkw"
-            target="_blank"
-            rel="noopener"
-            class="location-hotspot waze-hotspot"
-            aria-label="Open Waze">
-        </a>
-
-
-        <!-- INVISIBLE GOOGLE MAPS CLICK AREA -->
-
-        <a
-            href="https://www.google.com/maps/dir//Rumah+Abang+Jamil+BATU+PAHAT,+Lot+2199,+Jalan+Peserai+Lama,+Taman+Muhibbah,+83000+Batu+Pahat,+Johor/@3.103049,101.627155,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d057693ec826af:0xce495a0b5b097aaa!2m2!1d102.9204243!2d1.8501724?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener"
-            class="location-hotspot maps-hotspot"
-            aria-label="Open Google Maps">
-        </a>
-
-    </div>
-
-
-
-   
-
-
-
-    <!-- =====================================
+</div>
+<!-- =====================================
          MUSIC
     ====================================== -->
 
     <section class="music-section">
 
-    <button
-        class="music-button"
-        onclick="toggleMusic()"
-        id="musicButton"
-        aria-label="Play or pause music">
+        <button
+            class="music-button"
+            onclick="toggleMusic()"
+            id="musicButton"
+            aria-label="Play or pause music">
+            ▶
+        </button>
 
-        ▶
+        <audio
+            id="weddingMusic"
+            loop>
+            <source
+                src="music.mp3"
+                type="audio/mpeg">
+        </audio>
 
-    </button>
+    </section>
+<!-- =====================================
+     RSVP
+====================================== -->
 
+<section class="rsvp-section" id="rsvp">
 
-    <audio
-        id="weddingMusic"
-        loop>
+    <div class="rsvp-decoration">
+        ♡
+    </div>
 
-        <source
-            src="masdo.mp3"
-            type="audio/mpeg">
+    <h2 class="rsvp-title">
+        RSVP
+    </h2>
 
-    </audio>
+    <p class="rsvp-subtitle">
+        Sila maklumkan kehadiran anda<br>
+        sebelum tarikh yang ditetapkan.
+    </p>
+
+    <form class="rsvp-card" id="rsvpForm">
+
+        <label class="rsvp-label" for="rsvp-name">
+            Nama *
+        </label>
+
+        <input
+            type="text"
+            id="rsvp-name"
+            name="name"
+            class="rsvp-input"
+            placeholder="Masukkan nama anda"
+            required>
+
+        <label class="rsvp-label">
+            Adakah anda akan hadir? *
+        </label>
+
+        <div class="rsvp-options">
+
+            <label class="rsvp-option">
+                <input
+                    type="radio"
+                    name="attendance"
+                    value="Ya, akan hadir"
+                    required>
+                <span class="radio-circle"></span>
+                <span>Ya, akan hadir</span>
+            </label>
+
+            <label class="rsvp-option">
+                <input
+                    type="radio"
+                    name="attendance"
+                    value="Tidak, tidak dapat hadir">
+                <span class="radio-circle"></span>
+                <span>Tidak, tidak dapat hadir</span>
+            </label>
+
+        </div>
+
+        <label
+            class="rsvp-label"
+            for="rsvp-pax">
+            Bilangan tetamu *
+        </label>
+
+        <select
+            id="rsvp-pax"
+            name="pax"
+            class="rsvp-select"
+            required>
+
+            <option value="">
+                Pilih bilangan tetamu
+            </option>
+
+            <option value="1">1 orang</option>
+            <option value="2">2 orang</option>
+            <option value="3">3 orang</option>
+            <option value="4">4 orang</option>
+            <option value="5">5 orang</option>
+            <option value="6">6 orang</option>
+            <option value="7">7 orang</option>
+            <option value="8">8 orang</option>
+            <option value="9">9 orang</option>
+            <option value="10">10 orang</option>
+
+        </select>
+
+        <button
+            type="submit"
+            class="rsvp-submit">
+            Hantar
+        </button>
+
+        <div
+            class="rsvp-success"
+            id="rsvpSuccess">
+            Terima kasih! Kehadiran anda telah direkodkan. ❤️
+        </div>
+
+    </form>
 
 </section>
 
 
 
-    <!-- =====================================
-         RSVP
-    ====================================== -->
-
-    <section
-        class="rsvp-section"
-        id="rsvp">
-
-
-        <div class="rsvp-decoration">
-            ♡
-        </div>
-
-
-        <h2 class="rsvp-title">
-            RSVP
-        </h2>
-
-
-        <p class="rsvp-subtitle">
-            Sila maklumkan kehadiran anda<br>
-            sebelum tarikh yang ditetapkan.
-        </p>
-
-
-
-        <!-- RSVP FORM -->
-
-        <form
-            class="rsvp-card"
-            id="rsvpForm">
-
-
-            <!-- NAMA -->
-
-            <label
-                class="rsvp-label"
-                for="rsvp-name">
-
-                Nama *
-
-            </label>
-
-
-            <input
-                type="text"
-                id="rsvp-name"
-                name="name"
-                class="rsvp-input"
-                placeholder="Masukkan nama anda"
-                required
-            >
-
-
-
-            <!-- KEHADIRAN -->
-
-            <label class="rsvp-label">
-
-                Adakah anda akan hadir? *
-
-            </label>
-
-
-            <div class="rsvp-options">
-
-
-                <label class="rsvp-option">
-
-                    <input
-                        type="radio"
-                        name="attendance"
-                        value="Ya, akan hadir"
-                        required
-                    >
-
-                    <span class="radio-circle"></span>
-
-                    <span>
-                        Ya, akan hadir
-                    </span>
-
-                </label>
-
-
-
-                <label class="rsvp-option">
-
-                    <input
-                        type="radio"
-                        name="attendance"
-                        value="Tidak, tidak dapat hadir"
-                    >
-
-                    <span class="radio-circle"></span>
-
-                    <span>
-                        Tidak, tidak dapat hadir
-                    </span>
-
-                </label>
-
-
-            </div>
-
-
-
-            <!-- BILANGAN TETAMU -->
-
-            <label
-                class="rsvp-label"
-                for="rsvp-pax">
-
-                Bilangan tetamu *
-
-            </label>
-
-
-            <select
-                id="rsvp-pax"
-                name="pax"
-                class="rsvp-select"
-                required>
-
-                <option value="">
-                    Pilih bilangan tetamu
-                </option>
-
-                <option value="1">
-                    1 orang
-                </option>
-
-                <option value="2">
-                    2 orang
-                </option>
-
-                <option value="3">
-                    3 orang
-                </option>
-
-                <option value="4">
-                    4 orang
-                </option>
-
-                <option value="5">
-                    5 orang
-                </option>
-
-                <option value="6">
-                    6 orang
-                </option>
-
-                <option value="7">
-                    7 orang
-                </option>
-
-                <option value="8">
-                    8 orang
-                </option>
-
-                <option value="9">
-                    9 orang
-                </option>
-
-                <option value="10">
-                    10 orang
-                </option>
-
-            </select>
-
-
-
-            <!-- HANTAR -->
-
-            <button
-                type="submit"
-                class="rsvp-submit"
-                id="rsvpSubmit">
-
-                Hantar
-
-            </button>
-
-
-            <!-- SUCCESS MESSAGE -->
-
-            <div
-                class="rsvp-success"
-                id="rsvpSuccess">
-
-                Terima kasih! ❤️<br>
-                Kehadiran anda telah direkodkan.
-
-            </div>
-
-
-        </form>
-
-    </section>
-
-
-
-    <!-- =====================================
+<!-- =====================================
          GUESTBOOK
     ====================================== -->
 
@@ -1439,19 +894,15 @@ input:checked + .radio-circle {
         class="guestbook-section"
         id="guestbook">
 
-
         <h2 class="section-title">
             💕 Guestbook
         </h2>
 
-
         <p class="form-description">
 
-            Tinggalkan ucapan buat kami
-            untuk dikenang pada hari istimewa ini.
+            Tinggalkan ucapan buat kami untuk dikenang pada hari istimewa ini.
 
         </p>
-
 
 
         <form
@@ -1463,8 +914,7 @@ input:checked + .radio-circle {
                 type="text"
                 name="name"
                 placeholder="Nama anda"
-                required
-            >
+                required>
 
 
             <textarea
@@ -1478,29 +928,26 @@ input:checked + .radio-circle {
                 type="submit"
                 class="submit-button">
 
-                💕 Hantar
+                Hantar
 
             </button>
 
-
         </form>
-
 
 
         <div
             class="guestbook-messages"
             id="guestbookMessages">
 
-            <p class="loading">
+            <p>
                 Loading ucapan...
             </p>
 
         </div>
 
-
     </section>
 
- <!-- =====================================
+    <!-- =====================================
          COUNTDOWN
     ====================================== -->
 
@@ -1577,6 +1024,11 @@ input:checked + .radio-circle {
 
     </section>
 
+
+    
+
+
+
     <!-- =====================================
          FOOTER
     ====================================== -->
@@ -1592,13 +1044,10 @@ input:checked + .radio-circle {
 
 </main>
 
-
-
 <script>
 
-
 /* =========================================
-   OPEN INVITATION
+   OPEN INVITATION + MUSIC
 ========================================= */
 
 function openInvitation() {
@@ -1609,87 +1058,52 @@ function openInvitation() {
             behavior: "smooth"
         });
 
-
     const music =
-        document.getElementById(
-            "weddingMusic"
-        );
-
+        document.getElementById("weddingMusic");
 
     const musicButton =
-        document.getElementById(
-            "musicButton"
-        );
-
+        document.getElementById("musicButton");
 
     music.play()
         .then(function() {
-
             musicButton.innerText = "Ⅱ";
-
         })
         .catch(function(error) {
-
-            console.log(
-                "Music could not autoplay:",
-                error
-            );
-
+            console.log("Music could not autoplay:", error);
         });
-
 }
-
 
 
 /* =========================================
    COUNTDOWN
 ========================================= */
 
-/*
-   Wedding date:
-   5 December 2026
-*/
-
 const weddingDate =
-    new Date(
-        "December 5, 2026 19:30:00"
-    ).getTime();
-
+    new Date("December 5, 2026 19:30:00").getTime();
 
 function updateCountdown() {
 
     const now =
         new Date().getTime();
 
-
     const difference =
         weddingDate - now;
 
-
     if (difference <= 0) {
 
-        document.getElementById("days").innerText =
-            "00";
-
-        document.getElementById("hours").innerText =
-            "00";
-
-        document.getElementById("minutes").innerText =
-            "00";
-
-        document.getElementById("seconds").innerText =
-            "00";
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
 
         return;
     }
-
 
     const days =
         Math.floor(
             difference /
             (1000 * 60 * 60 * 24)
         );
-
 
     const hours =
         Math.floor(
@@ -1699,7 +1113,6 @@ function updateCountdown() {
             (1000 * 60 * 60)
         );
 
-
     const minutes =
         Math.floor(
             (difference %
@@ -1707,7 +1120,6 @@ function updateCountdown() {
             /
             (1000 * 60)
         );
-
 
     const seconds =
         Math.floor(
@@ -1717,36 +1129,21 @@ function updateCountdown() {
             1000
         );
 
-
-    document.getElementById("days")
-        .innerText =
+    document.getElementById("days").innerText =
         String(days).padStart(2, "0");
 
-
-    document.getElementById("hours")
-        .innerText =
+    document.getElementById("hours").innerText =
         String(hours).padStart(2, "0");
 
-
-    document.getElementById("minutes")
-        .innerText =
+    document.getElementById("minutes").innerText =
         String(minutes).padStart(2, "0");
 
-
-    document.getElementById("seconds")
-        .innerText =
+    document.getElementById("seconds").innerText =
         String(seconds).padStart(2, "0");
-
 }
 
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
+setInterval(updateCountdown, 1000);
 updateCountdown();
-
 
 
 /* =========================================
@@ -1754,281 +1151,130 @@ updateCountdown();
 ========================================= */
 
 const music =
-    document.getElementById(
-        "weddingMusic"
-    );
-
+    document.getElementById("weddingMusic");
 
 const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
-
+    document.getElementById("musicButton");
 
 function toggleMusic() {
 
     if (music.paused) {
 
-        music.play();
-
-        musicButton.innerText = "Ⅱ";
+        music.play()
+            .then(function() {
+                musicButton.innerText = "Ⅱ";
+            })
+            .catch(function(error) {
+                console.log("Music could not play:", error);
+            });
 
     } else {
 
         music.pause();
-
         musicButton.innerText = "▶";
 
     }
-
 }
-
 
 
 /* =========================================
    GOOGLE APPS SCRIPT
 ========================================= */
 
-/*
-   IMPORTANT:
-   Replace the text below with your
-   actual Google Apps Script Web App URL.
-
-   Example:
-
-   const SCRIPT_URL =
-   "https://script.google.com/macros/s/XXXX/exec";
-*/
-
 const SCRIPT_URL =
     "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
-
 
 
 /* =========================================
    RSVP SUBMISSION
 ========================================= */
 
-const rsvpForm =
-    document.getElementById(
-        "rsvpForm"
-    );
+document
+    .getElementById("rsvpForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
 
+            event.preventDefault();
 
-rsvpForm.addEventListener(
-    "submit",
-    async function(event) {
+            const form = event.target;
+            const data = new FormData(form);
 
-        event.preventDefault();
+            data.append("type", "rsvp");
 
+            try {
 
-        const submitButton =
-            document.getElementById(
-                "rsvpSubmit"
-            );
-
-
-        const successMessage =
-            document.getElementById(
-                "rsvpSuccess"
-            );
-
-
-        /* Check Google Apps Script URL */
-
-        if (
-            SCRIPT_URL ===
-            "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
-        ) {
-
-            alert(
-                "Google Apps Script URL belum dimasukkan."
-            );
-
-            return;
-        }
-
-
-        /* Disable button */
-
-        submitButton.disabled =
-            true;
-
-        submitButton.innerText =
-            "Menghantar...";
-
-
-        const data =
-            new FormData(
-                rsvpForm
-            );
-
-
-        data.append(
-            "type",
-            "rsvp"
-        );
-
-
-        try {
-
-            await fetch(
-                SCRIPT_URL,
-                {
-                    method: "POST",
-                    body: data,
-                    mode: "no-cors"
-                }
-            );
-
-
-            /* Hide form fields */
-
-            rsvpForm
-                .querySelectorAll(
-                    ".rsvp-label, .rsvp-input, .rsvp-options, .rsvp-select, .rsvp-submit"
-                )
-                .forEach(
-                    function(element) {
-
-                        element.style.display =
-                            "none";
-
+                await fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+                        body: data,
+                        mode: "no-cors"
                     }
                 );
 
+                form.style.display = "none";
 
-            successMessage.style.display =
-                "block";
+                document
+                    .getElementById("rsvpSuccess")
+                    .style.display = "block";
 
+            } catch (error) {
 
-        } catch (error) {
+                alert(
+                    "Something went wrong. Please try again."
+                );
 
-            alert(
-                "Something went wrong. Please try again."
-            );
-
-
-            submitButton.disabled =
-                false;
-
-            submitButton.innerText =
-                "Hantar";
-
+            }
         }
-
-    }
-);
-
+    );
 
 
 /* =========================================
    GUESTBOOK SUBMISSION
 ========================================= */
 
-const guestbookForm =
-    document.getElementById(
-        "guestbookForm"
+document
+    .getElementById("guestbookForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+            const form = event.target;
+            const data = new FormData(form);
+
+            data.append("type", "guestbook");
+
+            try {
+
+                await fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+                        body: data,
+                        mode: "no-cors"
+                    }
+                );
+
+                form.reset();
+
+                alert(
+                    "💕 Terima kasih untuk ucapan anda!"
+                );
+
+                loadGuestbook();
+
+            } catch (error) {
+
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
+            }
+        }
     );
-
-
-guestbookForm.addEventListener(
-    "submit",
-    async function(event) {
-
-        event.preventDefault();
-
-
-        if (
-            SCRIPT_URL ===
-            "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
-        ) {
-
-            alert(
-                "Google Apps Script URL belum dimasukkan."
-            );
-
-            return;
-        }
-
-
-        const form =
-            event.target;
-
-
-        const data =
-            new FormData(
-                form
-            );
-
-
-        data.append(
-            "type",
-            "guestbook"
-        );
-
-
-        const submitButton =
-            form.querySelector(
-                ".submit-button"
-            );
-
-
-        submitButton.disabled =
-            true;
-
-        submitButton.innerText =
-            "Menghantar...";
-
-
-        try {
-
-            await fetch(
-                SCRIPT_URL,
-                {
-                    method: "POST",
-                    body: data,
-                    mode: "no-cors"
-                }
-            );
-
-
-            form.reset();
-
-
-            alert(
-                "💕 Terima kasih atas ucapan anda!"
-            );
-
-
-            submitButton.disabled =
-                false;
-
-            submitButton.innerText =
-                "💕 Hantar";
-
-
-            loadGuestbook();
-
-
-        } catch (error) {
-
-            alert(
-                "Something went wrong. Please try again."
-            );
-
-
-            submitButton.disabled =
-                false;
-
-            submitButton.innerText =
-                "💕 Hantar";
-
-        }
-
-    }
-);
-
 
 
 /* =========================================
@@ -2037,24 +1283,8 @@ guestbookForm.addEventListener(
 
 function loadGuestbook() {
 
-    /*
-       Do not try to load if the
-       Apps Script URL has not been added.
-    */
-
-    if (
-        SCRIPT_URL ===
-        "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
-    ) {
-
-        return;
-
-    }
-
-
     const callbackName =
         "guestbookCallback";
-
 
     window[callbackName] =
         function(data) {
@@ -2064,10 +1294,7 @@ function loadGuestbook() {
                     "guestbookMessages"
                 );
 
-
-            container.innerHTML =
-                "";
-
+            container.innerHTML = "";
 
             if (
                 !data ||
@@ -2075,105 +1302,57 @@ function loadGuestbook() {
             ) {
 
                 container.innerHTML =
-                    "<p class='loading'>Jadilah yang pertama meninggalkan ucapan ❤️</p>";
+                    "<p>Jadilah yang pertama meninggalkan ucapan ❤️</p>";
 
                 return;
             }
-
 
             data.forEach(
                 function(item) {
 
                     const message =
-                        document.createElement(
-                            "div"
-                        );
-
+                        document.createElement("div");
 
                     message.className =
                         "guest-message";
 
-
                     message.innerHTML =
-
                         "<div class='guest-name'>" +
-
-                        escapeHTML(
-                            item.name
-                        ) +
-
+                        escapeHTML(item.name) +
                         "</div>" +
-
                         "<div class='guest-text'>" +
-
-                        escapeHTML(
-                            item.message
-                        ) +
-
+                        escapeHTML(item.message) +
                         "</div>";
 
-
-                    container.appendChild(
-                        message
-                    );
+                    container.appendChild(message);
 
                 }
             );
-
         };
 
-
     const script =
-        document.createElement(
-            "script"
-        );
-
+        document.createElement("script");
 
     script.src =
         SCRIPT_URL +
         "?action=getGuestbook&callback=" +
         callbackName;
 
-
-    document.body.appendChild(
-        script
-    );
-
+    document.body.appendChild(script);
 }
 
-
-
-/* =========================================
-   ESCAPE HTML
-========================================= */
 
 function escapeHTML(text) {
 
     const div =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
-
-    div.innerText =
-        text;
-
+    div.innerText = text;
 
     return div.innerHTML;
-
 }
 
-
-
-/* =========================================
-   LOAD GUESTBOOK ON PAGE LOAD
-========================================= */
-
-loadGuestbook();
-
-
 </script>
-
 
 </body>
 
