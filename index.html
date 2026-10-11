@@ -119,65 +119,33 @@ img {
     width: 100%;
     height: auto;
 }
-
-
 /* =========================================
-   LOCATION BUTTONS
-========================================= */
+   CLICKABLE LINKS INSIDE LOCATION HEART
+   ========================================= */
 
-.location-buttons {
-
-    width: 90%;
-
-    max-width: 500px;
-
-    margin: -30px auto 60px;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.location-button {
-
-    flex: 1;
-
-    padding: 16px 10px;
-
-    border: 2px solid #b52121;
-
-    border-radius: 40px;
-
-    background: #f8f4df;
-
-    color: #b52121;
-
-    font-family: Georgia, serif;
-
-    font-size: 17px;
-
+.location-hotspot {
+    position: absolute;
+    z-index: 20;
+    display: block;
+    background: transparent;
     cursor: pointer;
-
-    text-decoration: none;
-
-    text-align: center;
-
-    transition: 0.2s;
 }
 
-.location-button:hover {
-
-    background: #b52121;
-
-    color: white;
+/* Waze link inside red heart */
+.waze-hotspot {
+    left: 50%;
+    top: 18.5%;
+    width: 38%;
+    height: 5%;
 }
 
+/* Google Maps link inside red heart */
+.maps-hotspot {
+    left: 50%;
+    top: 23.5%;
+    width: 38%;
+    height: 5%;
+}
 
 /* =========================================
    COUNTDOWN
@@ -560,41 +528,31 @@ img {
 
     <div class="main-artwork-wrapper">
 
-        <img
-            src="invitation-content2.png"
-            alt="Wedding invitation"
-            class="main-artwork">
+    <img
+        src="invitation-content2.png"
+        alt="Wedding invitation"
+        class="main-artwork">
 
-    </div>
+    <!-- INVISIBLE WAZE CLICK AREA -->
+    <a
+        href="https://waze.com/ul/hw234w0bkw"
+        target="_blank"
+        rel="noopener"
+        class="location-hotspot waze-hotspot"
+        aria-label="Open Waze">
+    </a>
 
+    <!-- INVISIBLE GOOGLE MAPS CLICK AREA -->
+    <a
+        href="https://www.google.com/maps/dir//Rumah+Abang+Jamil+BATU+PAHAT,+Lot+2199,+Jalan+Peserai+Lama,+Taman+Muhibbah,+83000+Batu+Pahat,+Johor/@3.103049,101.627155,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d057693ec826af:0xce495a0b5b097aaa!2m2!1d102.9204243!2d1.8501724?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener"
+        class="location-hotspot maps-hotspot"
+        aria-label="Open Google Maps">
+    </a>
 
+</div>
 
-    <!-- =====================================
-         LOCATION BUTTONS
-    ====================================== -->
-
-    <div class="location-buttons">
-
-        <a
-            href="YOUR_WAZE_LINK_HERE"
-            target="_blank"
-            class="location-button">
-
-            📍 Open Waze
-
-        </a>
-
-
-        <a
-            href="YOUR_GOOGLE_MAP_LINK_HERE"
-            target="_blank"
-            class="location-button">
-
-            🗺️ Google Maps
-
-        </a>
-
-    </div>
 
 
 
