@@ -3,135 +3,513 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>Syaza + Aisy | Wedding Day</title>
+<title>Syaza + Aisy | Wedding Day</title>
 
+<style>
 
-    <style>
+/* =========================================
+   GENERAL
+========================================= */
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+html {
+    scroll-behavior: smooth;
+}
 
-        html,
-        body {
+body {
+    background: #f8f4df;
+    color: #203d22;
+    font-family: Georgia, serif;
+}
 
-            width: 100%;
-            height: 100%;
-
-            overflow: hidden;
-
-        }
-
-
-        body {
-
-            background: #f7f1d9;
-
-        }
-
-
-        /* ==========================================
-           PAGE 1 — COVER
-        ========================================== */
-
-        .cover-page {
-
-            position: relative;
-
-            width: 100vw;
-            height: 100vh;
-
-            overflow: hidden;
-
-            background: #f7f1d9;
-
-        }
+img {
+    display: block;
+    max-width: 100%;
+}
 
 
-        /* YOUR ORIGINAL IMAGE */
+/* =========================================
+   COVER
+========================================= */
 
-        .cover-image {
+.cover-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
 
-            position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-            width: 100%;
-            height: 100%;
+    background: #f8f4df;
 
-            left: 0;
-            top: 0;
+    overflow: hidden;
+}
 
-            object-fit: contain;
-
-            object-position: center center;
-
-            display: block;
-
-        }
-
-
-        /* ==========================================
-           INVISIBLE OPEN INVITATION CLICK AREA
-        ========================================== */
-
-        .open-invitation-click {
-
-            position: absolute;
-
-            left: 50%;
-
-            bottom: 5%;
-
-            transform: translateX(-50%);
-
-            width: 65%;
-
-            height: 12%;
-
-            background: transparent;
-
-            border: none;
-
-            cursor: pointer;
-
-            z-index: 10;
-
-        }
+.cover-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
 
 
-        /* ==========================================
-           MOBILE
-        ========================================== */
+/* Invisible clickable area
+   over the ORIGINAL green button
+*/
 
-        @media (max-width: 600px) {
+.open-invitation-click {
+    position: absolute;
 
-            .cover-image {
+    left: 50%;
+    bottom: 6%;
 
-                object-fit: contain;
+    transform: translateX(-50%);
 
-            }
+    width: 75%;
+    height: 12%;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
 
 
-            .open-invitation-click {
+/* =========================================
+   MAIN INVITATION
+========================================= */
 
-                width: 75%;
+.invitation-content {
+    width: 100%;
 
-                height: 13%;
+    background: #f8f4df;
 
-                bottom: 4%;
+    padding-bottom: 80px;
+}
 
-            }
 
-        }
+/* =========================================
+   MAIN ARTWORK
+========================================= */
 
-    </style>
+.main-artwork-wrapper {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
+}
+
+.main-artwork {
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   LOCATION BUTTONS
+========================================= */
+
+.location-buttons {
+
+    width: 90%;
+
+    max-width: 500px;
+
+    margin: -30px auto 60px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.location-button {
+
+    flex: 1;
+
+    padding: 16px 10px;
+
+    border: 2px solid #b52121;
+
+    border-radius: 40px;
+
+    background: #f8f4df;
+
+    color: #b52121;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    transition: 0.2s;
+}
+
+.location-button:hover {
+
+    background: #b52121;
+
+    color: white;
+}
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown-section {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+.section-title {
+
+    font-size: 42px;
+
+    font-weight: normal;
+
+    color: #183d22;
+
+    margin-bottom: 25px;
+}
+
+.countdown {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.count-box {
+
+    border: 2px solid #b52121;
+
+    padding: 15px 5px;
+
+    background: #f8f4df;
+}
+
+.count-number {
+
+    display: block;
+
+    font-size: 30px;
+
+    color: #b52121;
+}
+
+.count-label {
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    color: #183d22;
+}
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+.music-section {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.music-button {
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 50%;
+
+    border: 2px solid #b52121;
+
+    background: #f8f4df;
+
+    color: #b52121;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   RSVP
+========================================= */
+
+.form-section {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    margin: 0 auto 80px;
+
+    text-align: center;
+}
+
+.form-description {
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+.wedding-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    text-align: left;
+}
+
+.wedding-form label {
+
+    font-size: 15px;
+
+    color: #183d22;
+}
+
+.wedding-form input,
+.wedding-form select,
+.wedding-form textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 16px;
+
+    font-family: inherit;
+}
+
+.wedding-form textarea {
+
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+.submit-button {
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #b52121;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.submit-button:hover {
+
+    opacity: 0.85;
+}
+
+.success-message {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #e9f1df;
+
+    border-radius: 10px;
+
+    color: #183d22;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   GUESTBOOK
+========================================= */
+
+.guestbook-section {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    margin: 0 auto 80px;
+
+    text-align: center;
+}
+
+.guestbook-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    text-align: left;
+
+    margin-bottom: 40px;
+}
+
+.guestbook-messages {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.guest-message {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.06);
+}
+
+.guest-name {
+
+    color: #b52121;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.guest-text {
+
+    color: #183d22;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: #183d22;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .cover-image {
+
+        width: 100%;
+
+        max-width: none;
+    }
+
+    .open-invitation-click {
+
+        width: 80%;
+
+        height: 13%;
+
+        bottom: 5%;
+    }
+
+    .section-title {
+
+        font-size: 34px;
+    }
+
+    .count-number {
+
+        font-size: 24px;
+    }
+
+    .location-buttons {
+
+        flex-direction: column;
+
+        margin-top: -10px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -139,55 +517,818 @@
 <body>
 
 
-    <!-- ==========================================
-         PAGE 1
-    ========================================== -->
+<!-- =========================================
+     COVER
+========================================= -->
 
-    <section
-        id="page1"
-        class="cover-page">
+<section class="cover-page"
+         id="cover">
+
+    <img
+        src="page1-cover.png.png"
+        alt="Syaza + Aisy Wedding Day"
+        class="cover-image">
+
+    <!--
+        Invisible button placed over
+        the ORIGINAL Open Invitation
+        button inside the artwork.
+    -->
+
+    <button
+        class="open-invitation-click"
+        onclick="openInvitation()"
+        aria-label="Open Invitation">
+    </button>
+
+</section>
 
 
-        <!-- ORIGINAL COVER IMAGE -->
+
+<!-- =========================================
+     MAIN INVITATION
+========================================= -->
+
+<main
+    class="invitation-content"
+    id="invitation">
+
+
+    <!-- =====================================
+         YOUR MAIN WEDDING ARTWORK
+    ====================================== -->
+
+    <div class="main-artwork-wrapper">
 
         <img
-            src="page1-cover.png.png"
-            alt="Syaza and Aisy Wedding Invitation"
-            class="cover-image">
+            src="invitation-content.png"
+            alt="Wedding invitation"
+            class="main-artwork">
+
+    </div>
 
 
-        <!--
-            Invisible clickable area.
 
-            The actual Open Invitation
-            design is already inside the PNG.
-        -->
+    <!-- =====================================
+         LOCATION BUTTONS
+    ====================================== -->
 
-        <button
-            class="open-invitation-click"
-            onclick="openInvitation()"
-            aria-label="Open Invitation">
-        </button>
+    <div class="location-buttons">
 
+        <a
+            href="YOUR_WAZE_LINK_HERE"
+            target="_blank"
+            class="location-button">
+
+            📍 Open Waze
+
+        </a>
+
+
+        <a
+            href="YOUR_GOOGLE_MAP_LINK_HERE"
+            target="_blank"
+            class="location-button">
+
+            🗺️ Google Maps
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================
+         COUNTDOWN
+    ====================================== -->
+
+    <section
+        class="countdown-section"
+        id="countdown">
+
+        <h2 class="section-title">
+            ⏳ Countdown
+        </h2>
+
+        <div class="countdown">
+
+            <div class="count-box">
+
+                <span
+                    class="count-number"
+                    id="days">
+                    00
+                </span>
+
+                <span class="count-label">
+                    Days
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span
+                    class="count-number"
+                    id="hours">
+                    00
+                </span>
+
+                <span class="count-label">
+                    Hours
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span
+                    class="count-number"
+                    id="minutes">
+                    00
+                </span>
+
+                <span class="count-label">
+                    Minutes
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span
+                    class="count-number"
+                    id="seconds">
+                    00
+                </span>
+
+                <span class="count-label">
+                    Seconds
+                </span>
+
+            </div>
+
+        </div>
 
     </section>
 
 
 
-    <script>
+    <!-- =====================================
+         MUSIC
+    ====================================== -->
 
-        function openInvitation() {
+    <section class="music-section">
 
-            /*
-             * Page 2 will be added later.
-             *
-             * For now, clicking the button
-             * does nothing.
-             */
+        <h2 class="section-title">
+            🎵 Music
+        </h2>
+
+        <button
+            class="music-button"
+            onclick="toggleMusic()"
+            id="musicButton">
+
+            ▶
+
+        </button>
+
+        <!--
+            Later put your MP3 filename here.
+            Example:
+            music.mp3
+        -->
+
+        <audio
+            id="weddingMusic"
+            loop>
+
+            <source
+                src="music.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+    </section>
+
+
+
+    <!-- =====================================
+         RSVP
+    ====================================== -->
+
+    <section
+        class="form-section"
+        id="rsvp">
+
+        <h2 class="section-title">
+            💌 RSVP
+        </h2>
+
+        <p class="form-description">
+
+            We would be delighted to celebrate
+            this special day with you.
+
+        </p>
+
+
+        <form
+            class="wedding-form"
+            id="rsvpForm">
+
+
+            <label>
+                Name
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required>
+
+
+            <label>
+                Will you be attending?
+            </label>
+
+            <select
+                name="attendance"
+                required>
+
+                <option value="">
+                    Please select
+                </option>
+
+                <option value="Yes">
+                    Yes, I'll be there! ❤️
+                </option>
+
+                <option value="No">
+                    Sorry, I can't make it
+                </option>
+
+            </select>
+
+
+            <label>
+                Number of guests
+            </label>
+
+            <select
+                name="guests"
+                required>
+
+                <option value="">
+                    Please select
+                </option>
+
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+
+            </select>
+
+
+            <label>
+                Phone number
+            </label>
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="01X-XXXXXXX">
+
+
+            <label>
+                Remarks
+            </label>
+
+            <textarea
+                name="remarks"
+                placeholder="Any message or dietary requirements?">
+            </textarea>
+
+
+            <button
+                type="submit"
+                class="submit-button">
+
+                💌 Submit RSVP
+
+            </button>
+
+        </form>
+
+
+        <div
+            class="success-message"
+            id="rsvpSuccess">
+
+            ❤️ Thank you!
+            Your RSVP has been received.
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         GUESTBOOK
+    ====================================== -->
+
+    <section
+        class="guestbook-section"
+        id="guestbook">
+
+        <h2 class="section-title">
+            💕 Guestbook
+        </h2>
+
+        <p class="form-description">
+
+            Leave us a little message
+            to remember this special day.
+
+        </p>
+
+
+        <form
+            class="guestbook-form"
+            id="guestbookForm">
+
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required>
+
+
+            <textarea
+                name="message"
+                placeholder="Write your ucapan here ❤️"
+                required>
+            </textarea>
+
+
+            <button
+                type="submit"
+                class="submit-button">
+
+                💕 Post Ucapan
+
+            </button>
+
+        </form>
+
+
+        <div
+            class="guestbook-messages"
+            id="guestbookMessages">
+
+            <p>
+                Loading ucapan...
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <p>
+            With love, Syaza & Aisy ❤️
+        </p>
+
+    </footer>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =========================================
+   OPEN INVITATION
+========================================= */
+
+function openInvitation() {
+
+    document
+        .getElementById("invitation")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+/*
+   Wedding date:
+   5 December 2026
+
+   Change the time if needed.
+*/
+
+const weddingDate =
+    new Date("December 5, 2026 19:30:00").getTime();
+
+
+function updateCountdown() {
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        weddingDate - now;
+
+
+    if (difference <= 0) {
+
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference %
+            (1000 * 60))
+            /
+            1000
+        );
+
+
+    document.getElementById("days")
+        .innerText =
+        String(days).padStart(2, "0");
+
+
+    document.getElementById("hours")
+        .innerText =
+        String(hours).padStart(2, "0");
+
+
+    document.getElementById("minutes")
+        .innerText =
+        String(minutes).padStart(2, "0");
+
+
+    document.getElementById("seconds")
+        .innerText =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+updateCountdown();
+
+
+
+/* =========================================
+   MUSIC
+========================================= */
+
+const music =
+    document.getElementById(
+        "weddingMusic"
+    );
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+function toggleMusic() {
+
+    if (music.paused) {
+
+        music.play();
+
+        musicButton.innerText = "⏸";
+
+    } else {
+
+        music.pause();
+
+        musicButton.innerText = "▶";
+
+    }
+
+}
+
+
+
+/* =========================================
+   GOOGLE APPS SCRIPT
+========================================= */
+
+/*
+   WE WILL PUT YOUR GOOGLE APPS SCRIPT
+   WEB APP URL HERE LATER.
+
+   Example:
+
+   const SCRIPT_URL =
+   "https://script.google.com/macros/s/XXXX/exec";
+*/
+
+const SCRIPT_URL =
+    "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+
+
+
+/* =========================================
+   RSVP SUBMISSION
+========================================= */
+
+document
+    .getElementById("rsvpForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const form =
+                event.target;
+
+            const data =
+                new FormData(form);
+
+
+            data.append(
+                "type",
+                "rsvp"
+            );
+
+
+            try {
+
+                await fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+                        body: data,
+                        mode: "no-cors"
+                    }
+                );
+
+
+                form.style.display =
+                    "none";
+
+
+                document
+                    .getElementById(
+                        "rsvpSuccess"
+                    )
+                    .style.display =
+                    "block";
+
+
+            } catch (error) {
+
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
+            }
 
         }
+    );
 
-    </script>
+
+
+/* =========================================
+   GUESTBOOK SUBMISSION
+========================================= */
+
+document
+    .getElementById("guestbookForm")
+    .addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const form =
+                event.target;
+
+            const data =
+                new FormData(form);
+
+
+            data.append(
+                "type",
+                "guestbook"
+            );
+
+
+            try {
+
+                await fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+                        body: data,
+                        mode: "no-cors"
+                    }
+                );
+
+
+                form.reset();
+
+
+                alert(
+                    "💕 Thank you for your ucapan!"
+                );
+
+
+                loadGuestbook();
+
+
+            } catch (error) {
+
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
+            }
+
+        }
+    );
+
+
+
+/* =========================================
+   LOAD GUESTBOOK
+========================================= */
+
+function loadGuestbook() {
+
+    const callbackName =
+        "guestbookCallback";
+
+
+    window[callbackName] =
+        function(data) {
+
+            const container =
+                document.getElementById(
+                    "guestbookMessages"
+                );
+
+
+            container.innerHTML =
+                "";
+
+
+            if (
+                !data ||
+                data.length === 0
+            ) {
+
+                container.innerHTML =
+                    "<p>Be the first to leave a message ❤️</p>";
+
+                return;
+            }
+
+
+            data.forEach(
+                function(item) {
+
+                    const message =
+                        document.createElement(
+                            "div"
+                        );
+
+                    message.className =
+                        "guest-message";
+
+
+                    message.innerHTML =
+
+                        "<div class='guest-name'>" +
+
+                        escapeHTML(
+                            item.name
+                        ) +
+
+                        "</div>" +
+
+                        "<div class='guest-text'>" +
+
+                        escapeHTML(
+                            item.message
+                        ) +
+
+                        "</div>";
+
+
+                    container.appendChild(
+                        message
+                    );
+
+                }
+            );
+
+        };
+
+
+    const script =
+        document.createElement(
+            "script"
+        );
+
+
+    script.src =
+        SCRIPT_URL +
+        "?action=getGuestbook&callback=" +
+        callbackName;
+
+
+    document.body.appendChild(
+        script
+    );
+
+}
+
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+    div.innerText =
+        text;
+
+    return div.innerHTML;
+
+}
+
+
+</script>
 
 
 </body>
