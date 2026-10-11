@@ -83,59 +83,7 @@
            OPEN INVITATION BUTTON
            ========================================= */
 
-        .open-invitation {
-
-            position: absolute;
-
-            left: 50%;
-            bottom: 6.5%;
-
-            transform: translateX(-50%);
-
-            width: 58%;
-            max-width: 620px;
-
-            padding: 18px 35px 22px;
-
-            border: none;
-
-            background: #3f5b25;
-
-            color: white;
-
-            font-family: "Caveat", cursive;
-
-            font-size: clamp(28px, 4vw, 52px);
-
-            font-weight: 400;
-
-            line-height: 1;
-
-            border-radius: 50%;
-
-            cursor: pointer;
-
-            z-index: 10;
-
-            transition:
-                transform 0.2s ease,
-                filter 0.2s ease;
-        }
-
-        .open-invitation:hover {
-
-            filter: brightness(1.08);
-
-        }
-
-        .open-invitation:active {
-
-            transform:
-                translateX(-50%)
-                scale(0.96);
-
-        }
-
+     
 
         /* =========================================
            HEARTBEAT
@@ -180,26 +128,38 @@
            MOBILE
            ========================================= */
 
-        @media (max-width: 600px) {
+       /* =========================================
+   INVISIBLE OPEN INVITATION CLICK AREA
+   ========================================= */
 
-            .cover-image {
+.open-invitation-click {
+    position: absolute;
 
-                object-fit: cover;
+    left: 50%;
+    bottom: 4%;
 
-            }
+    transform: translateX(-50%);
 
-            .open-invitation {
+    width: 70%;
+    height: 13%;
 
-                width: 72%;
+    background: transparent;
 
-                bottom: 5%;
+    cursor: pointer;
 
-                font-size: 34px;
+    z-index: 10;
+}
 
-                padding: 15px 25px 18px;
 
-            }
-        }
+@media (max-width: 600px) {
+
+    .cover-image {
+        object-fit: cover;
+    }
+
+}
+
+
 
     </style>
 </head>
@@ -223,15 +183,12 @@
             class="cover-image">
 
 
-        <!-- OPEN INVITATION -->
+       <!-- INVISIBLE CLICK AREA OVER ORIGINAL BUTTON -->
 
-        <button
-            class="open-invitation"
-            onclick="openInvitation()">
-
-            Open Invitation
-
-        </button>
+<div
+    class="open-invitation-click"
+    onclick="openInvitation()">
+</div>
 
     </section>
 
