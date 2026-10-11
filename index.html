@@ -13,6 +13,8 @@
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
 /* =========================================
    GENERAL
 ========================================= */
@@ -249,154 +251,319 @@ img {
 ========================================= */
 
 .rsvp-section {
-    width: 90%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 760px;
 
-    margin: 0 auto 80px;
+    margin: 0 auto 90px;
+
+    padding: 20px 15px 0;
 
     text-align: center;
+
+    position: relative;
 }
 
 
-/* RSVP TITLE */
+/* =========================================
+   RSVP TITLE
+========================================= */
+
+.rsvp-decoration {
+    position: absolute;
+
+    top: 10px;
+    left: 8%;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 55px;
+
+    color: #d51f28;
+
+    transform: rotate(-15deg);
+
+    line-height: 1;
+}
+
+
+/* Right decorative heart */
+
+.rsvp-decoration::after {
+    content: "♡";
+
+    position: absolute;
+
+    left: 520px;
+    top: 10px;
+
+    font-size: 55px;
+
+    color: #d51f28;
+
+    transform: rotate(15deg);
+}
+
+
+/* =========================================
+   RSVP TITLE
+========================================= */
 
 .rsvp-title {
-    font-size: 64px;
+    position: relative;
 
-    font-weight: normal;
+    margin: 0;
 
-    color: #183d22;
+    font-family: "Caveat", cursive;
 
-    margin-bottom: 5px;
+    font-size: 92px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: #155b43;
+
+    letter-spacing: 1px;
 }
 
 
-/* RSVP SUBTITLE */
+/* =========================================
+   RSVP SUBTITLE
+========================================= */
 
 .rsvp-subtitle {
-    font-size: 16px;
+    margin: 15px auto 55px;
 
-    line-height: 1.6;
+    max-width: 600px;
 
-    color: #183d22;
+    font-family: "Caveat", cursive;
 
-    margin-bottom: 25px;
+    font-size: 29px;
+
+    line-height: 1.35;
+
+    color: #155b43;
 }
 
 
-/* RSVP CARD */
+/* =========================================
+   RSVP CARD
+========================================= */
 
 .rsvp-card {
     position: relative;
 
     width: 100%;
 
-    padding: 40px 28px 35px;
+    padding: 75px 65px 70px;
 
-    background: #b52121;
+    background:
+        linear-gradient(
+            145deg,
+            #d4262e 0%,
+            #c91f27 45%,
+            #b91820 100%
+        );
 
-    border-radius: 30px;
+    border-radius: 42px;
 
-    border: 5px solid #f5c9a7;
+    border: 5px solid #f4bfa0;
 
     box-shadow:
-        0 8px 0 rgba(125, 24, 24, 0.18);
+        0 0 0 5px rgba(244,191,160,0.35),
+        0 12px 0 rgba(188,139,109,0.28);
 
     text-align: left;
+
+    overflow: visible;
 }
 
 
-/* DECORATIVE HEART */
+/* =========================================
+   DECORATIVE BOW
+========================================= */
 
-.rsvp-decoration {
-    font-size: 45px;
+.rsvp-card::before {
+    content: "";
 
-    color: #b52121;
+    position: absolute;
 
-    margin-bottom: 5px;
+    top: -42px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 150px;
+    height: 70px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #f02b32 0%,
+            #c71921 65%,
+            #a91219 100%
+        );
+
+    border-radius: 70% 30% 70% 30%;
+
+    box-shadow:
+        -65px 5px 0 -12px #d52129,
+         65px 5px 0 -12px #d52129;
+
+    z-index: 5;
 }
 
 
-/* LABEL */
+/* Bow centre */
+
+.rsvp-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: -20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #a91219;
+
+    border: 4px solid #e84247;
+
+    z-index: 8;
+}
+
+
+/* =========================================
+   FORM LABELS
+========================================= */
 
 .rsvp-label {
     display: block;
 
-    margin-top: 20px;
-    margin-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 10px;
 
-    color: #f8d2b5;
+    color: #ffe2c9;
 
-    font-size: 17px;
+    font-family: "Caveat", cursive;
 
-    font-weight: bold;
+    font-size: 31px;
+
+    font-weight: 500;
+
+    line-height: 1.1;
 }
 
 
-/* INPUT */
+/* First label */
+
+.rsvp-card .rsvp-label:first-child {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   TEXT INPUT
+========================================= */
 
 .rsvp-input,
 .rsvp-select {
     width: 100%;
 
-    min-height: 48px;
+    height: 62px;
 
-    padding: 12px 15px;
+    padding: 0 22px;
 
-    border: none;
+    border: 2px solid rgba(255,255,255,0.8);
 
-    border-radius: 14px;
+    border-radius: 17px;
 
-    background: #fffdf5;
+    background: #fffdf7;
 
     color: #183d22;
 
-    font-family: Georgia, serif;
+    font-family: "DM Sans", sans-serif;
 
-    font-size: 15px;
+    font-size: 17px;
 
     outline: none;
+
+    box-shadow:
+        inset 0 1px 2px rgba(0,0,0,0.04);
 }
+
 
 .rsvp-input::placeholder {
-    color: #999;
+    color: #929292;
 }
 
 
-/* RADIO OPTIONS */
+.rsvp-input:focus,
+.rsvp-select:focus {
+    border-color: #ffe3d0;
+
+    box-shadow:
+        0 0 0 3px rgba(255,226,201,0.25);
+}
+
+
+/* =========================================
+   ATTENDANCE OPTIONS
+========================================= */
 
 .rsvp-options {
-    display: flex;
+    display: grid;
 
-    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
 
     width: 100%;
 }
 
+
 .rsvp-option {
     position: relative;
-
-    flex: 1;
 
     display: flex;
 
     align-items: center;
 
-    gap: 8px;
+    gap: 15px;
 
-    min-height: 55px;
+    min-height: 72px;
 
-    padding: 10px 12px;
+    padding: 14px 22px;
 
-    background: #fffdf5;
+    background: #fffdf7;
 
-    border-radius: 14px;
+    border-radius: 17px;
 
     color: #183d22;
 
-    font-size: 13px;
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 17px;
 
     cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.rsvp-option:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,0.12);
 }
 
 
@@ -416,10 +583,10 @@ img {
 .radio-circle {
     flex-shrink: 0;
 
-    width: 18px;
-    height: 18px;
+    width: 29px;
+    height: 29px;
 
-    border: 2px solid #b52121;
+    border: 3px solid #d5252d;
 
     border-radius: 50%;
 
@@ -427,54 +594,125 @@ img {
 }
 
 
+/* Second option green */
+
+.rsvp-option:nth-child(2) .radio-circle {
+    border-color: #155b43;
+}
+
+
 /* Selected radio */
 
 .rsvp-option input:checked + .radio-circle {
-    background: #b52121;
+    background: #d5252d;
 
     box-shadow:
-        inset 0 0 0 4px white;
+        inset 0 0 0 6px white;
 }
 
 
-/* HANTAR BUTTON */
+.rsvp-option:nth-child(2)
+input:checked + .radio-circle {
+    background: #155b43;
+}
+
+
+/* =========================================
+   SELECT ARROW
+========================================= */
+
+.rsvp-select {
+    appearance: auto;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HANTAR BUTTON
+========================================= */
 
 .rsvp-submit {
-    display: block;
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     width: 100%;
 
-    margin-top: 30px;
+    height: 75px;
 
-    padding: 15px 20px;
+    margin-top: 38px;
 
-    border: none;
+    padding: 10px 90px 10px 20px;
 
-    border-radius: 18px;
+    border: 2px solid rgba(255,255,255,0.35);
 
-    background: #5d8c4a;
+    border-radius: 30px;
 
-    color: #f8d2b5;
+    background:
+        linear-gradient(
+            180deg,
+            #176147 0%,
+            #104f3a 100%
+        );
 
-    font-family: Georgia, serif;
+    color: white;
 
-    font-size: 19px;
+    font-family: "Caveat", cursive;
 
-    font-weight: bold;
+    font-size: 43px;
+
+    font-weight: 500;
 
     cursor: pointer;
 
-    transition: transform 0.2s ease,
-                opacity 0.2s ease;
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,0.15),
+        0 3px 0 rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
+
+.rsvp-submit::after {
+    content: "➤";
+
+    position: absolute;
+
+    right: 25%;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(-18deg);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 40px;
+
+    color: white;
+}
+
 
 .rsvp-submit:hover {
     transform: translateY(-2px);
+
+    box-shadow:
+        inset 0 2px 4px rgba(255,255,255,0.15),
+        0 5px 0 rgba(0,0,0,0.18);
 }
 
+
 .rsvp-submit:active {
-    transform: translateY(0);
+    transform: translateY(1px);
 }
+
 
 .rsvp-submit:disabled {
     opacity: 0.6;
@@ -483,7 +721,20 @@ img {
 }
 
 
-/* RSVP SUCCESS */
+/* =========================================
+   CARD DECORATIONS
+========================================= */
+
+/* Small heart bottom right */
+
+.rsvp-card .rsvp-success::after {
+    content: "♡";
+}
+
+
+/* =========================================
+   RSVP SUCCESS
+========================================= */
 
 .rsvp-success {
     display: none;
@@ -492,7 +743,7 @@ img {
 
     padding: 20px;
 
-    background: #fffdf5;
+    background: #fffdf7;
 
     border-radius: 15px;
 
@@ -500,9 +751,99 @@ img {
 
     text-align: center;
 
-    line-height: 1.6;
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    line-height: 1.4;
 }
 
+
+/* =========================================
+   MOBILE RSVP
+========================================= */
+
+@media (max-width: 600px) {
+
+    .rsvp-section {
+        width: 100%;
+
+        padding: 20px 12px 0;
+    }
+
+
+    .rsvp-decoration {
+        display: none;
+    }
+
+
+    .rsvp-decoration::after {
+        display: none;
+    }
+
+
+    .rsvp-title {
+        font-size: 65px;
+    }
+
+
+    .rsvp-subtitle {
+        font-size: 23px;
+
+        margin-bottom: 48px;
+    }
+
+
+    .rsvp-card {
+        padding: 65px 22px 45px;
+
+        border-radius: 32px;
+    }
+
+
+    .rsvp-label {
+        font-size: 27px;
+    }
+
+
+    .rsvp-options {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .rsvp-option {
+        min-height: 62px;
+
+        font-size: 15px;
+    }
+
+
+    .rsvp-input,
+    .rsvp-select {
+        height: 56px;
+
+        font-size: 15px;
+    }
+
+
+    .rsvp-submit {
+        height: 65px;
+
+        font-size: 36px;
+
+        padding-right: 70px;
+    }
+
+
+    .rsvp-submit::after {
+        right: 18%;
+
+        font-size: 30px;
+    }
+
+}
 
 /* =========================================
    GUESTBOOK
