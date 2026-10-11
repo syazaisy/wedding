@@ -148,6 +148,123 @@ img {
     width: 27%;
     height: 2.6%;
 }
+<!-- =================================
+     RSVP
+================================= -->
+
+<section class="rsvp-section" id="rsvp">
+
+    <div class="rsvp-card">
+
+        <!-- EXACT RSVP ARTWORK -->
+        <img
+            src="rsvp.png"
+            alt="RSVP"
+            class="rsvp-background"
+        >
+
+        <!-- NAME -->
+        <div class="rsvp-field rsvp-name-field">
+
+            <input
+                type="text"
+                id="rsvpName"
+                placeholder="Masukkan nama anda"
+                autocomplete="name"
+                required
+            >
+
+        </div>
+
+
+        <!-- ATTENDANCE -->
+
+        <div class="rsvp-field rsvp-attendance-field">
+
+            <label class="attendance-choice yes-choice">
+
+                <input
+                    type="radio"
+                    name="attendance"
+                    value="Ya"
+                    required
+                >
+
+                <span class="radio-circle"></span>
+
+                <span>Ya, akan hadir</span>
+
+            </label>
+
+
+            <label class="attendance-choice no-choice">
+
+                <input
+                    type="radio"
+                    name="attendance"
+                    value="Tidak"
+                >
+
+                <span class="radio-circle"></span>
+
+                <span>Tidak, tidak dapat hadir</span>
+
+            </label>
+
+        </div>
+
+
+        <!-- NUMBER OF GUESTS -->
+
+        <div class="rsvp-field rsvp-pax-field">
+
+            <select
+                id="rsvpPax"
+                required
+            >
+
+                <option value="" disabled selected>
+                    Pilih bilangan tetamu
+                </option>
+
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- HANTAR -->
+
+        <button
+            type="button"
+            class="rsvp-submit"
+            onclick="submitRSVP()"
+            aria-label="Hantar RSVP"
+        >
+            <span>Hantar</span>
+        </button>
+
+
+        <!-- MESSAGE -->
+
+        <div
+            id="rsvpMessage"
+            class="rsvp-message"
+        ></div>
+
+    </div>
+
+</section>
 
 /* =========================================
    COUNTDOWN
@@ -242,117 +359,6 @@ img {
 
     cursor: pointer;
 }
-
-
-/* =========================================
-   RSVP
-========================================= */
-
-.form-section {
-
-    width: 90%;
-
-    max-width: 600px;
-
-    margin: 0 auto 80px;
-
-    text-align: center;
-}
-
-.form-description {
-
-    font-size: 17px;
-
-    line-height: 1.6;
-
-    margin-bottom: 25px;
-}
-
-.wedding-form {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-
-    text-align: left;
-}
-
-.wedding-form label {
-
-    font-size: 15px;
-
-    color: #183d22;
-}
-
-.wedding-form input,
-.wedding-form select,
-.wedding-form textarea {
-
-    width: 100%;
-
-    padding: 14px;
-
-    border: 1px solid #aaa;
-
-    border-radius: 8px;
-
-    background: white;
-
-    font-size: 16px;
-
-    font-family: inherit;
-}
-
-.wedding-form textarea {
-
-    min-height: 110px;
-
-    resize: vertical;
-}
-
-.submit-button {
-
-    margin-top: 10px;
-
-    padding: 15px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background: #b52121;
-
-    color: white;
-
-    font-size: 17px;
-
-    cursor: pointer;
-}
-
-.submit-button:hover {
-
-    opacity: 0.85;
-}
-
-.success-message {
-
-    display: none;
-
-    margin-top: 20px;
-
-    padding: 15px;
-
-    background: #e9f1df;
-
-    border-radius: 10px;
-
-    color: #183d22;
-
-    text-align: center;
-}
-
 
 /* =========================================
    GUESTBOOK
