@@ -161,6 +161,60 @@ img {
     height: 2.6%;
 }
 
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown-section {
+    width: 90%;
+    max-width: 600px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: normal;
+
+    color: #183d22;
+
+    margin-bottom: 25px;
+}
+
+.countdown {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.count-box {
+    border: 2px solid #b52121;
+
+    padding: 15px 5px;
+
+    background: #f8f4df;
+}
+
+.count-number {
+    display: block;
+
+    font-size: 30px;
+
+    color: #b52121;
+}
+
+.count-label {
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    color: #183d22;
+}
 
 /* =========================================
    MUSIC
@@ -842,60 +896,6 @@ input:checked + .radio-circle {
 
 }
 /* =========================================
-   COUNTDOWN
-========================================= */
-
-.countdown-section {
-    width: 90%;
-    max-width: 600px;
-
-    margin: 0 auto 70px;
-
-    text-align: center;
-}
-
-.section-title {
-    font-size: 42px;
-    font-weight: normal;
-
-    color: #183d22;
-
-    margin-bottom: 25px;
-}
-
-.countdown {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 10px;
-}
-
-.count-box {
-    border: 2px solid #b52121;
-
-    padding: 15px 5px;
-
-    background: #f8f4df;
-}
-
-.count-number {
-    display: block;
-
-    font-size: 30px;
-
-    color: #b52121;
-}
-
-.count-label {
-    font-size: 12px;
-
-    text-transform: uppercase;
-
-    color: #183d22;
-}
-/* =========================================
    GUESTBOOK
 ========================================= */
 
@@ -1194,82 +1194,7 @@ input:checked + .radio-circle {
 
 
 
-    <!-- =====================================
-         COUNTDOWN
-    ====================================== -->
-
-    <section
-        class="countdown-section"
-        id="countdown">
-
-        <h2 class="section-title">
-            ⏳ Countdown
-        </h2>
-
-        <div class="countdown">
-
-            <div class="count-box">
-
-                <span
-                    class="count-number"
-                    id="days">
-                    00
-                </span>
-
-                <span class="count-label">
-                    Days
-                </span>
-
-            </div>
-
-
-            <div class="count-box">
-
-                <span
-                    class="count-number"
-                    id="hours">
-                    00
-                </span>
-
-                <span class="count-label">
-                    Hours
-                </span>
-
-            </div>
-
-
-            <div class="count-box">
-
-                <span
-                    class="count-number"
-                    id="minutes">
-                    00
-                </span>
-
-                <span class="count-label">
-                    Minutes
-                </span>
-
-            </div>
-
-
-            <div class="count-box">
-
-                <span
-                    class="count-number"
-                    id="seconds">
-                    00
-                </span>
-
-                <span class="count-label">
-                    Seconds
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
+   
 
 
 
@@ -1575,7 +1500,82 @@ input:checked + .radio-circle {
 
     </section>
 
+ <!-- =====================================
+         COUNTDOWN
+    ====================================== -->
 
+    <section
+        class="countdown-section"
+        id="countdown">
+
+        <h2 class="section-title">
+            ⏳ Countdown
+        </h2>
+
+        <div class="countdown">
+
+            <div class="count-box">
+
+                <span
+                    class="count-number"
+                    id="days">
+                    00
+                </span>
+
+                <span class="count-label">
+                    Days
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span
+                    class="count-number"
+                    id="hours">
+                    00
+                </span>
+
+                <span class="count-label">
+                    Hours
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span
+                    class="count-number"
+                    id="minutes">
+                    00
+                </span>
+
+                <span class="count-label">
+                    Minutes
+                </span>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span
+                    class="count-number"
+                    id="seconds">
+                    00
+                </span>
+
+                <span class="count-label">
+                    Seconds
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- =====================================
          FOOTER
