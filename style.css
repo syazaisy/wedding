@@ -1,1 +1,224 @@
+/* =========================================
+   RSVP SECTION
+   ========================================= */
 
+.rsvp-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 70px 20px 100px;
+    background: #faf6e6;
+    font-family: "Caveat", cursive;
+    color: #174d3b;
+}
+
+/* RSVP title */
+.rsvp-title {
+    text-align: center;
+    font-size: 78px;
+    line-height: 1;
+    color: #174d3b;
+    margin: 0 0 15px;
+    font-weight: 500;
+}
+
+/* Subtitle */
+.rsvp-subtitle {
+    text-align: center;
+    font-size: 32px;
+    line-height: 1.25;
+    color: #174d3b;
+    margin: 0 auto 50px;
+    max-width: 520px;
+}
+
+/* Decorative hearts */
+.rsvp-decoration {
+    text-align: center;
+    color: #d71920;
+    font-size: 55px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   RED RSVP BOX
+   ========================================= */
+
+.rsvp-card {
+    position: relative;
+    width: 100%;
+    background: #c9161d;
+    border-radius: 35px;
+    padding: 55px 45px 60px;
+    box-shadow:
+        inset 0 0 0 3px rgba(255,255,255,0.3),
+        inset 0 0 0 7px rgba(255,255,255,0.08);
+}
+
+/* =========================================
+   FORM LABELS
+   ========================================= */
+
+.rsvp-label {
+    display: block;
+    color: #fff5dc;
+    font-size: 31px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+/* =========================================
+   INPUT
+   ========================================= */
+
+.rsvp-input,
+.rsvp-select {
+    width: 100%;
+    height: 65px;
+    border: 2px solid #d9d9d9;
+    border-radius: 18px;
+    background: #fffdf8;
+    padding: 0 22px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #444;
+    outline: none;
+    margin-bottom: 35px;
+}
+
+.rsvp-input::placeholder {
+    color: #999;
+}
+
+.rsvp-input:focus,
+.rsvp-select:focus {
+    border-color: #174d3b;
+}
+
+/* =========================================
+   ATTENDANCE OPTIONS
+   ========================================= */
+
+.rsvp-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.rsvp-option {
+    flex: 1;
+    min-height: 75px;
+    background: #fffdf8;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    color: #174d3b;
+}
+
+/* Hide actual radio */
+.rsvp-option input {
+    display: none;
+}
+
+/* Custom radio */
+.radio-circle {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border: 3px solid #174d3b;
+    border-radius: 50%;
+    margin-right: 14px;
+    background: white;
+}
+
+/* Selected radio */
+.rsvp-option:has(input:checked) .radio-circle {
+    box-shadow: inset 0 0 0 7px white;
+    background: #174d3b;
+}
+
+/* =========================================
+   HANTAR BUTTON
+   ========================================= */
+
+.rsvp-submit {
+    width: 100%;
+    height: 85px;
+    border: none;
+    border-radius: 25px;
+    background: #174d3b;
+    color: #fffdf8;
+    font-family: "Caveat", cursive;
+    font-size: 48px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.15s ease;
+}
+
+.rsvp-submit:hover {
+    transform: scale(1.02);
+}
+
+.rsvp-submit:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .rsvp-section {
+        padding: 50px 15px 80px;
+    }
+
+    .rsvp-title {
+        font-size: 62px;
+    }
+
+    .rsvp-subtitle {
+        font-size: 27px;
+        margin-bottom: 35px;
+    }
+
+    .rsvp-decoration {
+        font-size: 45px;
+    }
+
+    .rsvp-card {
+        padding: 40px 25px 45px;
+        border-radius: 28px;
+    }
+
+    .rsvp-label {
+        font-size: 28px;
+    }
+
+    .rsvp-input,
+    .rsvp-select {
+        height: 60px;
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+
+    .rsvp-options {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .rsvp-option {
+        min-height: 65px;
+        font-size: 16px;
+    }
+
+    .rsvp-submit {
+        height: 75px;
+        font-size: 42px;
+    }
+}
