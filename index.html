@@ -148,99 +148,147 @@ img {
     width: 27%;
     height: 2.6%;
 }
-<!-- =================================
+<!-- =========================================
      RSVP
-================================= -->
+========================================= -->
 
 <section class="rsvp-section" id="rsvp">
 
+    <div class="rsvp-decoration">
+        ♡
+    </div>
+
+    <h2 class="rsvp-title">
+        RSVP
+    </h2>
+
+    <p class="rsvp-subtitle">
+        Sila maklumkan kehadiran anda<br>
+        sebelum tarikh yang ditetapkan.
+    </p>
+
     <div class="rsvp-card">
 
-        <!-- EXACT RSVP ARTWORK -->
-        <img
-            src="rsvp.png"
-            alt="RSVP"
-            class="rsvp-background"
+        <!-- NAMA -->
+
+        <label class="rsvp-label" for="rsvp-name">
+            Nama *
+        </label>
+
+        <input
+            type="text"
+            id="rsvp-name"
+            class="rsvp-input"
+            placeholder="Masukkan nama anda"
+            required
         >
 
-        <!-- NAME -->
-        <div class="rsvp-field rsvp-name-field">
 
-            <input
-                type="text"
-                id="rsvpName"
-                placeholder="Masukkan nama anda"
-                autocomplete="name"
-                required
-            >
+        <!-- KEHADIRAN -->
 
-        </div>
+        <label class="rsvp-label">
+            Adakah anda akan hadir? *
+        </label>
 
+        <div class="rsvp-options">
 
-        <!-- ATTENDANCE -->
-
-        <div class="rsvp-field rsvp-attendance-field">
-
-            <label class="attendance-choice yes-choice">
+            <label class="rsvp-option">
 
                 <input
                     type="radio"
                     name="attendance"
-                    value="Ya"
+                    value="Ya, akan hadir"
                     required
                 >
 
                 <span class="radio-circle"></span>
 
-                <span>Ya, akan hadir</span>
+                <span>
+                    Ya, akan hadir
+                </span>
 
             </label>
 
 
-            <label class="attendance-choice no-choice">
+            <label class="rsvp-option">
 
                 <input
                     type="radio"
                     name="attendance"
-                    value="Tidak"
+                    value="Tidak, tidak dapat hadir"
                 >
 
                 <span class="radio-circle"></span>
 
-                <span>Tidak, tidak dapat hadir</span>
+                <span>
+                    Tidak, tidak dapat hadir
+                </span>
 
             </label>
 
         </div>
 
 
-        <!-- NUMBER OF GUESTS -->
+        <!-- BILANGAN TETAMU -->
 
-        <div class="rsvp-field rsvp-pax-field">
+        <label
+            class="rsvp-label"
+            for="rsvp-pax"
+        >
+            Bilangan tetamu *
+        </label>
 
-            <select
-                id="rsvpPax"
-                required
-            >
+        <select
+            id="rsvp-pax"
+            class="rsvp-select"
+            required
+        >
 
-                <option value="" disabled selected>
-                    Pilih bilangan tetamu
-                </option>
+            <option value="">
+                Pilih bilangan tetamu
+            </option>
 
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+            <option value="1">
+                1 orang
+            </option>
 
-            </select>
+            <option value="2">
+                2 orang
+            </option>
 
-        </div>
+            <option value="3">
+                3 orang
+            </option>
+
+            <option value="4">
+                4 orang
+            </option>
+
+            <option value="5">
+                5 orang
+            </option>
+
+            <option value="6">
+                6 orang
+            </option>
+
+            <option value="7">
+                7 orang
+            </option>
+
+            <option value="8">
+                8 orang
+            </option>
+
+            <option value="9">
+                9 orang
+            </option>
+
+            <option value="10">
+                10 orang
+            </option>
+
+        </select>
 
 
         <!-- HANTAR -->
@@ -249,23 +297,13 @@ img {
             type="button"
             class="rsvp-submit"
             onclick="submitRSVP()"
-            aria-label="Hantar RSVP"
         >
-            <span>Hantar</span>
+            Hantar
         </button>
-
-
-        <!-- MESSAGE -->
-
-        <div
-            id="rsvpMessage"
-            class="rsvp-message"
-        ></div>
 
     </div>
 
 </section>
-
 /* =========================================
    COUNTDOWN
 ========================================= */
