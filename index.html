@@ -235,6 +235,8 @@
 
     opacity: 0;
 
+    mix-blend-mode: multiply;
+
     animation:
         page2Write 3s ease forwards;
 
@@ -249,8 +251,29 @@
 .page2-heart5 {
     position: absolute;
 
-    left: 63.5%;
-    top: 49.5%;
+    left: 69%;
+    top: 59%;
+
+    width: 13%;
+    height: auto;
+
+    mix-blend-mode: multiply;
+
+    transform-origin: center;
+
+    animation:
+        page2Heartbeat 1.5s ease-in-out infinite;
+}
+
+/* =========================================
+   BLINKING BULBS
+   ========================================= */
+
+.page2-heart5 {
+    position: absolute;
+
+    left: 69%;
+    top: 59%;
 
     width: 13%;
     height: auto;
@@ -263,31 +286,13 @@
 
 
 /* =========================================
-   BLINKING BULBS
-   ========================================= */
-
-.page2-bulbs {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: auto;
-
-    animation:
-        page2Blink 1.2s ease-in-out infinite;
-}
-
-
-/* =========================================
    ANIMATIONS
    ========================================= */
 
 @keyframes page2Write {
 
     0% {
-        opacity: 0;
+        opacity: 1;
         clip-path: inset(0 100% 0 0);
     }
 
@@ -329,21 +334,27 @@
 
 
 @keyframes page2Blink {
-
     0% {
-        opacity: 0.45;
+        opacity: 0.65;
     }
 
-    50% {
+    25% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0.55;
+    }
+
+    65% {
         opacity: 1;
     }
 
     100% {
-        opacity: 0.45;
+        opacity: 0.65;
     }
-
-}
-    </style>
+}   
+</style>
 </head>
 
 
