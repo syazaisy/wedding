@@ -10,6 +10,7 @@
 
 <title>Syaza + Aisy | Wedding Day</title>
 
+
 <style>
 
 /* =========================================
@@ -105,7 +106,6 @@ img {
 ========================================= */
 
 .main-artwork-wrapper {
-
     position: relative;
 
     width: 100%;
@@ -115,214 +115,57 @@ img {
 }
 
 .main-artwork {
-
     width: 100%;
     height: auto;
 }
+
+
 /* =========================================
-   CLICKABLE LINKS INSIDE LOCATION HEART
-   ========================================= */
+   LOCATION HOTSPOTS
+========================================= */
 
 .location-hotspot {
     position: absolute;
     z-index: 20;
+
     display: block;
+
     background: transparent;
     border: none;
     outline: none;
+
     cursor: pointer;
 }
 
-/* TEMPORARY WAZE CLICK AREA */
+
+/* WAZE */
+
 .waze-hotspot {
     left: 51%;
     top: 58%;
+
     width: 27%;
     height: 2.6%;
 }
 
-/* TEMPORARY GOOGLE MAPS CLICK AREA */
+
+/* GOOGLE MAPS */
+
 .maps-hotspot {
     left: 51%;
     top: 61.2%;
+
     width: 27%;
     height: 2.6%;
 }
-</section>
-<!-- =========================================
-     RSVP
-========================================= -->
-
-<section class="rsvp-section" id="rsvp">
-      <div style="
-    background:red;
-    color:white;
-    font-size:40px;
-    padding:50px;
-    text-align:center;
-">
-    RSVP TEST
-</div>
-style="display:block !important; visibility:visible !important; opacity:1 !important;"
-
-    <div class="rsvp-decoration">
-        ♡
-    </div>
-
-    <h2 class="rsvp-title">
-        RSVP
-    </h2>
-
-    <p class="rsvp-subtitle">
-        Sila maklumkan kehadiran anda<br>
-        sebelum tarikh yang ditetapkan.
-    </p>
-
-    <div class="rsvp-card">
-
-        <!-- NAMA -->
-
-        <label class="rsvp-label" for="rsvp-name">
-            Nama *
-        </label>
-
-        <input
-            type="text"
-            id="rsvp-name"
-            class="rsvp-input"
-            placeholder="Masukkan nama anda"
-            required
-        >
 
 
-        <!-- KEHADIRAN -->
-
-        <label class="rsvp-label">
-            Adakah anda akan hadir? *
-        </label>
-
-        <div class="rsvp-options">
-
-            <label class="rsvp-option">
-
-                <input
-                    type="radio"
-                    name="attendance"
-                    value="Ya, akan hadir"
-                    required
-                >
-
-                <span class="radio-circle"></span>
-
-                <span>
-                    Ya, akan hadir
-                </span>
-
-            </label>
-
-
-            <label class="rsvp-option">
-
-                <input
-                    type="radio"
-                    name="attendance"
-                    value="Tidak, tidak dapat hadir"
-                >
-
-                <span class="radio-circle"></span>
-
-                <span>
-                    Tidak, tidak dapat hadir
-                </span>
-
-            </label>
-
-        </div>
-
-
-        <!-- BILANGAN TETAMU -->
-
-        <label
-            class="rsvp-label"
-            for="rsvp-pax"
-        >
-            Bilangan tetamu *
-        </label>
-
-        <select
-            id="rsvp-pax"
-            class="rsvp-select"
-            required
-        >
-
-            <option value="">
-                Pilih bilangan tetamu
-            </option>
-
-            <option value="1">
-                1 orang
-            </option>
-
-            <option value="2">
-                2 orang
-            </option>
-
-            <option value="3">
-                3 orang
-            </option>
-
-            <option value="4">
-                4 orang
-            </option>
-
-            <option value="5">
-                5 orang
-            </option>
-
-            <option value="6">
-                6 orang
-            </option>
-
-            <option value="7">
-                7 orang
-            </option>
-
-            <option value="8">
-                8 orang
-            </option>
-
-            <option value="9">
-                9 orang
-            </option>
-
-            <option value="10">
-                10 orang
-            </option>
-
-        </select>
-
-
-        <!-- HANTAR -->
-
-        <button
-            type="button"
-            class="rsvp-submit"
-            onclick="submitRSVP()"
-        >
-            Hantar
-        </button>
-
-    </div>
-
-</section>
 /* =========================================
    COUNTDOWN
 ========================================= */
 
 .countdown-section {
-
     width: 90%;
-
     max-width: 600px;
 
     margin: 0 auto 70px;
@@ -331,9 +174,7 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 }
 
 .section-title {
-
     font-size: 42px;
-
     font-weight: normal;
 
     color: #183d22;
@@ -342,7 +183,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 }
 
 .countdown {
-
     display: grid;
 
     grid-template-columns:
@@ -352,7 +192,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 }
 
 .count-box {
-
     border: 2px solid #b52121;
 
     padding: 15px 5px;
@@ -361,7 +200,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 }
 
 .count-number {
-
     display: block;
 
     font-size: 30px;
@@ -370,7 +208,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 }
 
 .count-label {
-
     font-size: 12px;
 
     text-transform: uppercase;
@@ -384,16 +221,13 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 ========================================= */
 
 .music-section {
-
     text-align: center;
 
     margin-bottom: 70px;
 }
 
 .music-button {
-
     width: 70px;
-
     height: 70px;
 
     border-radius: 50%;
@@ -409,14 +243,13 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
     cursor: pointer;
 }
 
+
 /* =========================================
-   GUESTBOOK
+   RSVP
 ========================================= */
 
-.guestbook-section {
-
+.rsvp-section {
     width: 90%;
-
     max-width: 600px;
 
     margin: 0 auto 80px;
@@ -424,8 +257,275 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
     text-align: center;
 }
 
-.guestbook-form {
 
+/* RSVP TITLE */
+
+.rsvp-title {
+    font-size: 64px;
+
+    font-weight: normal;
+
+    color: #183d22;
+
+    margin-bottom: 5px;
+}
+
+
+/* RSVP SUBTITLE */
+
+.rsvp-subtitle {
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #183d22;
+
+    margin-bottom: 25px;
+}
+
+
+/* RSVP CARD */
+
+.rsvp-card {
+    position: relative;
+
+    width: 100%;
+
+    padding: 40px 28px 35px;
+
+    background: #b52121;
+
+    border-radius: 30px;
+
+    border: 5px solid #f5c9a7;
+
+    box-shadow:
+        0 8px 0 rgba(125, 24, 24, 0.18);
+
+    text-align: left;
+}
+
+
+/* DECORATIVE HEART */
+
+.rsvp-decoration {
+    font-size: 45px;
+
+    color: #b52121;
+
+    margin-bottom: 5px;
+}
+
+
+/* LABEL */
+
+.rsvp-label {
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    color: #f8d2b5;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+
+/* INPUT */
+
+.rsvp-input,
+.rsvp-select {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #fffdf5;
+
+    color: #183d22;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.rsvp-input::placeholder {
+    color: #999;
+}
+
+
+/* RADIO OPTIONS */
+
+.rsvp-options {
+    display: flex;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.rsvp-option {
+    position: relative;
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-height: 55px;
+
+    padding: 10px 12px;
+
+    background: #fffdf5;
+
+    border-radius: 14px;
+
+    color: #183d22;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+/* Hide original radio */
+
+.rsvp-option input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* Custom radio */
+
+.radio-circle {
+    flex-shrink: 0;
+
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid #b52121;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+
+/* Selected radio */
+
+.rsvp-option input:checked + .radio-circle {
+    background: #b52121;
+
+    box-shadow:
+        inset 0 0 0 4px white;
+}
+
+
+/* HANTAR BUTTON */
+
+.rsvp-submit {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 15px 20px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: #5d8c4a;
+
+    color: #f8d2b5;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                opacity 0.2s ease;
+}
+
+.rsvp-submit:hover {
+    transform: translateY(-2px);
+}
+
+.rsvp-submit:active {
+    transform: translateY(0);
+}
+
+.rsvp-submit:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* RSVP SUCCESS */
+
+.rsvp-success {
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #fffdf5;
+
+    border-radius: 15px;
+
+    color: #183d22;
+
+    text-align: center;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   GUESTBOOK
+========================================= */
+
+.guestbook-section {
+    width: 90%;
+    max-width: 600px;
+
+    margin: 0 auto 80px;
+
+    text-align: center;
+}
+
+.form-description {
+    color: #183d22;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+.guestbook-form {
     display: flex;
 
     flex-direction: column;
@@ -437,8 +537,52 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
     margin-bottom: 40px;
 }
 
-.guestbook-messages {
+.guestbook-form input,
+.guestbook-form textarea {
+    width: 100%;
 
+    padding: 14px 15px;
+
+    border: 1px solid #d8cdb2;
+
+    border-radius: 12px;
+
+    background: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    color: #183d22;
+
+    outline: none;
+}
+
+.guestbook-form textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+.submit-button {
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #5d8c4a;
+
+    color: #f8d2b5;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.guestbook-messages {
     display: flex;
 
     flex-direction: column;
@@ -447,7 +591,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 }
 
 .guest-message {
-
     background: white;
 
     padding: 20px;
@@ -461,7 +604,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 }
 
 .guest-name {
-
     color: #b52121;
 
     font-size: 18px;
@@ -470,7 +612,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 }
 
 .guest-text {
-
     color: #183d22;
 
     line-height: 1.6;
@@ -482,7 +623,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 ========================================= */
 
 .footer {
-
     text-align: center;
 
     padding: 40px 20px;
@@ -500,53 +640,85 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 @media (max-width: 600px) {
 
     .cover-image {
-
         width: 100%;
-
         max-width: none;
     }
 
     .open-invitation-click {
-
         width: 80%;
-
         height: 13%;
-
         bottom: 5%;
     }
 
     .section-title {
-
         font-size: 34px;
     }
 
     .count-number {
-
         font-size: 24px;
     }
 
     .location-buttons {
-
         flex-direction: column;
-
         margin-top: -10px;
     }
 
-}
-/* ================================
-   FORCE RSVP TO SHOW
-================================ */
+    .rsvp-title {
+        font-size: 54px;
+    }
 
-.rsvp-section {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 10 !important;
-    width: 100% !important;
-    min-height: 700px;
-    padding: 60px 20px;
+    .rsvp-card {
+        padding: 32px 20px 28px;
+    }
+
+    .rsvp-options {
+        flex-direction: column;
+    }
+
+    .rsvp-option {
+        width: 100%;
+    }
+
 }
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .count-box {
+        padding: 12px 3px;
+    }
+
+    .count-number {
+        font-size: 21px;
+    }
+
+    .count-label {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+    color: #183d22;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
 </style>
 
 </head>
@@ -565,7 +737,8 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
     <img
         src="page1-cover.png.png"
         alt="Syaza + Aisy Wedding Day"
-        class="cover-image">
+        class="cover-image"
+    >
 
     <!--
         Invisible button placed over
@@ -593,36 +766,40 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 
 
     <!-- =====================================
-         YOUR MAIN WEDDING ARTWORK
+         MAIN WEDDING ARTWORK
     ====================================== -->
 
     <div class="main-artwork-wrapper">
 
-    <img
-        src="invitation-content2.png"
-        alt="Wedding invitation"
-        class="main-artwork">
+        <img
+            src="invitation-content2.png"
+            alt="Wedding invitation"
+            class="main-artwork"
+        >
 
-    <!-- INVISIBLE WAZE CLICK AREA -->
-    <a
-        href="https://waze.com/ul/hw234w0bkw"
-        target="_blank"
-        rel="noopener"
-        class="location-hotspot waze-hotspot"
-        aria-label="Open Waze">
-    </a>
 
-    <!-- INVISIBLE GOOGLE MAPS CLICK AREA -->
-    <a
-        href="https://www.google.com/maps/dir//Rumah+Abang+Jamil+BATU+PAHAT,+Lot+2199,+Jalan+Peserai+Lama,+Taman+Muhibbah,+83000+Batu+Pahat,+Johor/@3.103049,101.627155,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d057693ec826af:0xce495a0b5b097aaa!2m2!1d102.9204243!2d1.8501724?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
-        target="_blank"
-        rel="noopener"
-        class="location-hotspot maps-hotspot"
-        aria-label="Open Google Maps">
-    </a>
+        <!-- INVISIBLE WAZE CLICK AREA -->
 
-</div>
+        <a
+            href="https://waze.com/ul/hw234w0bkw"
+            target="_blank"
+            rel="noopener"
+            class="location-hotspot waze-hotspot"
+            aria-label="Open Waze">
+        </a>
 
+
+        <!-- INVISIBLE GOOGLE MAPS CLICK AREA -->
+
+        <a
+            href="https://www.google.com/maps/dir//Rumah+Abang+Jamil+BATU+PAHAT,+Lot+2199,+Jalan+Peserai+Lama,+Taman+Muhibbah,+83000+Batu+Pahat,+Johor/@3.103049,101.627155,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31d057693ec826af:0xce495a0b5b097aaa!2m2!1d102.9204243!2d1.8501724?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener"
+            class="location-hotspot maps-hotspot"
+            aria-label="Open Google Maps">
+        </a>
+
+    </div>
 
 
 
@@ -724,11 +901,6 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
 
         </button>
 
-        <!--
-            Later put your MP3 filename here.
-            Example:
-            music.mp3
-        -->
 
         <audio
             id="weddingMusic"
@@ -743,6 +915,209 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
     </section>
 
 
+
+    <!-- =====================================
+         RSVP
+    ====================================== -->
+
+    <section
+        class="rsvp-section"
+        id="rsvp">
+
+
+        <div class="rsvp-decoration">
+            ♡
+        </div>
+
+
+        <h2 class="rsvp-title">
+            RSVP
+        </h2>
+
+
+        <p class="rsvp-subtitle">
+            Sila maklumkan kehadiran anda<br>
+            sebelum tarikh yang ditetapkan.
+        </p>
+
+
+
+        <!-- RSVP FORM -->
+
+        <form
+            class="rsvp-card"
+            id="rsvpForm">
+
+
+            <!-- NAMA -->
+
+            <label
+                class="rsvp-label"
+                for="rsvp-name">
+
+                Nama *
+
+            </label>
+
+
+            <input
+                type="text"
+                id="rsvp-name"
+                name="name"
+                class="rsvp-input"
+                placeholder="Masukkan nama anda"
+                required
+            >
+
+
+
+            <!-- KEHADIRAN -->
+
+            <label class="rsvp-label">
+
+                Adakah anda akan hadir? *
+
+            </label>
+
+
+            <div class="rsvp-options">
+
+
+                <label class="rsvp-option">
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Ya, akan hadir"
+                        required
+                    >
+
+                    <span class="radio-circle"></span>
+
+                    <span>
+                        Ya, akan hadir
+                    </span>
+
+                </label>
+
+
+
+                <label class="rsvp-option">
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Tidak, tidak dapat hadir"
+                    >
+
+                    <span class="radio-circle"></span>
+
+                    <span>
+                        Tidak, tidak dapat hadir
+                    </span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- BILANGAN TETAMU -->
+
+            <label
+                class="rsvp-label"
+                for="rsvp-pax">
+
+                Bilangan tetamu *
+
+            </label>
+
+
+            <select
+                id="rsvp-pax"
+                name="pax"
+                class="rsvp-select"
+                required>
+
+                <option value="">
+                    Pilih bilangan tetamu
+                </option>
+
+                <option value="1">
+                    1 orang
+                </option>
+
+                <option value="2">
+                    2 orang
+                </option>
+
+                <option value="3">
+                    3 orang
+                </option>
+
+                <option value="4">
+                    4 orang
+                </option>
+
+                <option value="5">
+                    5 orang
+                </option>
+
+                <option value="6">
+                    6 orang
+                </option>
+
+                <option value="7">
+                    7 orang
+                </option>
+
+                <option value="8">
+                    8 orang
+                </option>
+
+                <option value="9">
+                    9 orang
+                </option>
+
+                <option value="10">
+                    10 orang
+                </option>
+
+            </select>
+
+
+
+            <!-- HANTAR -->
+
+            <button
+                type="submit"
+                class="rsvp-submit"
+                id="rsvpSubmit">
+
+                Hantar
+
+            </button>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                class="rsvp-success"
+                id="rsvpSuccess">
+
+                Terima kasih! ❤️<br>
+                Kehadiran anda telah direkodkan.
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+
+
     <!-- =====================================
          GUESTBOOK
     ====================================== -->
@@ -751,16 +1126,19 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
         class="guestbook-section"
         id="guestbook">
 
+
         <h2 class="section-title">
             💕 Guestbook
         </h2>
 
+
         <p class="form-description">
 
-            Leave us a little message
-            to remember this special day.
+            Tinggalkan ucapan buat kami
+            untuk dikenang pada hari istimewa ini.
 
         </p>
+
 
 
         <form
@@ -771,13 +1149,14 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
             <input
                 type="text"
                 name="name"
-                placeholder="Your name"
-                required>
+                placeholder="Nama anda"
+                required
+            >
 
 
             <textarea
                 name="message"
-                placeholder="Write your ucapan here ❤️"
+                placeholder="Tulis ucapan anda di sini ❤️"
                 required>
             </textarea>
 
@@ -786,22 +1165,25 @@ style="display:block !important; visibility:visible !important; opacity:1 !impor
                 type="submit"
                 class="submit-button">
 
-                💕 Post Ucapan
+                💕 Hantar
 
             </button>
 
+
         </form>
+
 
 
         <div
             class="guestbook-messages"
             id="guestbookMessages">
 
-            <p>
+            <p class="loading">
                 Loading ucapan...
             </p>
 
         </div>
+
 
     </section>
 
@@ -842,6 +1224,7 @@ function openInvitation() {
 }
 
 
+
 /* =========================================
    COUNTDOWN
 ========================================= */
@@ -849,12 +1232,12 @@ function openInvitation() {
 /*
    Wedding date:
    5 December 2026
-
-   Change the time if needed.
 */
 
 const weddingDate =
-    new Date("December 5, 2026 19:30:00").getTime();
+    new Date(
+        "December 5, 2026 19:30:00"
+    ).getTime();
 
 
 function updateCountdown() {
@@ -862,16 +1245,24 @@ function updateCountdown() {
     const now =
         new Date().getTime();
 
+
     const difference =
         weddingDate - now;
 
 
     if (difference <= 0) {
 
-        document.getElementById("days").innerText = "00";
-        document.getElementById("hours").innerText = "00";
-        document.getElementById("minutes").innerText = "00";
-        document.getElementById("seconds").innerText = "00";
+        document.getElementById("days").innerText =
+            "00";
+
+        document.getElementById("hours").innerText =
+            "00";
+
+        document.getElementById("minutes").innerText =
+            "00";
+
+        document.getElementById("seconds").innerText =
+            "00";
 
         return;
     }
@@ -951,6 +1342,7 @@ const music =
         "weddingMusic"
     );
 
+
 const musicButton =
     document.getElementById(
         "musicButton"
@@ -963,13 +1355,15 @@ function toggleMusic() {
 
         music.play();
 
-        musicButton.innerText = "⏸";
+        musicButton.innerText =
+            "⏸";
 
     } else {
 
         music.pause();
 
-        musicButton.innerText = "▶";
+        musicButton.innerText =
+            "▶";
 
     }
 
@@ -982,8 +1376,9 @@ function toggleMusic() {
 ========================================= */
 
 /*
-   WE WILL PUT YOUR GOOGLE APPS SCRIPT
-   WEB APP URL HERE LATER.
+   IMPORTANT:
+   Replace the text below with your
+   actual Google Apps Script Web App URL.
 
    Example:
 
@@ -1000,62 +1395,116 @@ const SCRIPT_URL =
    RSVP SUBMISSION
 ========================================= */
 
-document
-    .getElementById("rsvpForm")
-    .addEventListener(
-        "submit",
-        async function(event) {
-
-            event.preventDefault();
+const rsvpForm =
+    document.getElementById(
+        "rsvpForm"
+    );
 
 
-            const form =
-                event.target;
+rsvpForm.addEventListener(
+    "submit",
+    async function(event) {
 
-            const data =
-                new FormData(form);
+        event.preventDefault();
 
 
-            data.append(
-                "type",
-                "rsvp"
+        const submitButton =
+            document.getElementById(
+                "rsvpSubmit"
             );
 
 
-            try {
+        const successMessage =
+            document.getElementById(
+                "rsvpSuccess"
+            );
 
-                await fetch(
-                    SCRIPT_URL,
-                    {
-                        method: "POST",
-                        body: data,
-                        mode: "no-cors"
+
+        /* Check Google Apps Script URL */
+
+        if (
+            SCRIPT_URL ===
+            "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
+        ) {
+
+            alert(
+                "Google Apps Script URL belum dimasukkan."
+            );
+
+            return;
+        }
+
+
+        /* Disable button */
+
+        submitButton.disabled =
+            true;
+
+        submitButton.innerText =
+            "Menghantar...";
+
+
+        const data =
+            new FormData(
+                rsvpForm
+            );
+
+
+        data.append(
+            "type",
+            "rsvp"
+        );
+
+
+        try {
+
+            await fetch(
+                SCRIPT_URL,
+                {
+                    method: "POST",
+                    body: data,
+                    mode: "no-cors"
+                }
+            );
+
+
+            /* Hide form fields */
+
+            rsvpForm
+                .querySelectorAll(
+                    ".rsvp-label, .rsvp-input, .rsvp-options, .rsvp-select, .rsvp-submit"
+                )
+                .forEach(
+                    function(element) {
+
+                        element.style.display =
+                            "none";
+
                     }
                 );
 
 
-                form.style.display =
-                    "none";
+            successMessage.style.display =
+                "block";
 
 
-                document
-                    .getElementById(
-                        "rsvpSuccess"
-                    )
-                    .style.display =
-                    "block";
+        } catch (error) {
+
+            alert(
+                "Something went wrong. Please try again."
+            );
 
 
-            } catch (error) {
+            submitButton.disabled =
+                false;
 
-                alert(
-                    "Something went wrong. Please try again."
-                );
-
-            }
+            submitButton.innerText =
+                "Hantar";
 
         }
-    );
+
+    }
+);
 
 
 
@@ -1063,61 +1512,108 @@ document
    GUESTBOOK SUBMISSION
 ========================================= */
 
-document
-    .getElementById("guestbookForm")
-    .addEventListener(
-        "submit",
-        async function(event) {
-
-            event.preventDefault();
+const guestbookForm =
+    document.getElementById(
+        "guestbookForm"
+    );
 
 
-            const form =
-                event.target;
+guestbookForm.addEventListener(
+    "submit",
+    async function(event) {
 
-            const data =
-                new FormData(form);
+        event.preventDefault();
 
 
-            data.append(
-                "type",
-                "guestbook"
+        if (
+            SCRIPT_URL ===
+            "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
+        ) {
+
+            alert(
+                "Google Apps Script URL belum dimasukkan."
+            );
+
+            return;
+        }
+
+
+        const form =
+            event.target;
+
+
+        const data =
+            new FormData(
+                form
             );
 
 
-            try {
-
-                await fetch(
-                    SCRIPT_URL,
-                    {
-                        method: "POST",
-                        body: data,
-                        mode: "no-cors"
-                    }
-                );
+        data.append(
+            "type",
+            "guestbook"
+        );
 
 
-                form.reset();
+        const submitButton =
+            form.querySelector(
+                ".submit-button"
+            );
 
 
-                alert(
-                    "💕 Thank you for your ucapan!"
-                );
+        submitButton.disabled =
+            true;
+
+        submitButton.innerText =
+            "Menghantar...";
 
 
-                loadGuestbook();
+        try {
+
+            await fetch(
+                SCRIPT_URL,
+                {
+                    method: "POST",
+                    body: data,
+                    mode: "no-cors"
+                }
+            );
 
 
-            } catch (error) {
+            form.reset();
 
-                alert(
-                    "Something went wrong. Please try again."
-                );
 
-            }
+            alert(
+                "💕 Terima kasih atas ucapan anda!"
+            );
+
+
+            submitButton.disabled =
+                false;
+
+            submitButton.innerText =
+                "💕 Hantar";
+
+
+            loadGuestbook();
+
+
+        } catch (error) {
+
+            alert(
+                "Something went wrong. Please try again."
+            );
+
+
+            submitButton.disabled =
+                false;
+
+            submitButton.innerText =
+                "💕 Hantar";
 
         }
-    );
+
+    }
+);
 
 
 
@@ -1126,6 +1622,21 @@ document
 ========================================= */
 
 function loadGuestbook() {
+
+    /*
+       Do not try to load if the
+       Apps Script URL has not been added.
+    */
+
+    if (
+        SCRIPT_URL ===
+        "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"
+    ) {
+
+        return;
+
+    }
+
 
     const callbackName =
         "guestbookCallback";
@@ -1150,7 +1661,7 @@ function loadGuestbook() {
             ) {
 
                 container.innerHTML =
-                    "<p>Be the first to leave a message ❤️</p>";
+                    "<p class='loading'>Jadilah yang pertama meninggalkan ucapan ❤️</p>";
 
                 return;
             }
@@ -1163,6 +1674,7 @@ function loadGuestbook() {
                         document.createElement(
                             "div"
                         );
+
 
                     message.className =
                         "guest-message";
@@ -1216,6 +1728,11 @@ function loadGuestbook() {
 }
 
 
+
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
 function escapeHTML(text) {
 
     const div =
@@ -1223,12 +1740,22 @@ function escapeHTML(text) {
             "div"
         );
 
+
     div.innerText =
         text;
+
 
     return div.innerHTML;
 
 }
+
+
+
+/* =========================================
+   LOAD GUESTBOOK ON PAGE LOAD
+========================================= */
+
+loadGuestbook();
 
 
 </script>
