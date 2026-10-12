@@ -621,67 +621,151 @@ input:checked
 
 }
 
-/* =========================================
+/* ==========================================
    COUNTDOWN
-========================================= */
+========================================== */
 
 .countdown-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 
-    width: 90%;
+    position: relative;
 
-    max-width: 600px;
+    background-color: #f8f4df;
 
-    margin: 0 auto 70px;
+    overflow: hidden;
+}
+
+
+.countdown-wrapper {
+    width: 100%;
+    aspect-ratio: 1536 / 2048;
+
+    position: relative;
+
+    background-image: url("countdown-bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+}
+
+
+/* ==========================================
+   LIVE COUNTDOWN NUMBERS
+========================================== */
+
+.countdown-number {
+    position: absolute;
+
+    color: #183d22;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 5.8vw;
+
+    font-weight: 500;
+
+    line-height: 1;
 
     text-align: center;
+
+    white-space: nowrap;
+
+    z-index: 5;
 }
 
-.section-title {
 
-    font-size: 42px;
+/* DAYS */
 
-    font-weight: normal;
+.days-number {
+    left: 6.5%;
+    top: 73.0%;
 
-    color: #183d22;
-
-    margin-bottom: 25px;
+    width: 18%;
 }
 
-.countdown {
 
-    display: grid;
+/* HOURS */
 
-    grid-template-columns:
-        repeat(4, 1fr);
+.hours-number {
+    left: 31.0%;
+    top: 73.0%;
 
-    gap: 10px;
+    width: 18%;
 }
 
-.count-box {
 
-    border: 2px solid #b52121;
+/* MINUTES */
 
-    padding: 15px 5px;
+.minutes-number {
+    left: 55.5%;
+    top: 73.0%;
 
-    background: #f8f4df;
+    width: 18%;
 }
 
-.count-number {
 
-    display: block;
+/* SECONDS */
 
-    font-size: 30px;
+.seconds-number {
+    left: 80.0%;
+    top: 73.0%;
 
-    color: #b52121;
+    width: 18%;
 }
 
-.count-label {
 
-    font-size: 12px;
+/* ==========================================
+   MOBILE
+========================================== */
 
-    text-transform: uppercase;
+@media (max-width: 600px) {
 
-    color: #183d22;
+    .countdown-wrapper {
+        width: 100%;
+
+        aspect-ratio: 1536 / 2048;
+
+        background-size: 100% auto;
+    }
+
+
+    .countdown-number {
+
+        font-size: 7.5vw;
+
+        font-weight: 500;
+    }
+
+
+    .days-number {
+        left: 5.5%;
+        top: 72.8%;
+        width: 20%;
+    }
+
+
+    .hours-number {
+        left: 30.5%;
+        top: 72.8%;
+        width: 20%;
+    }
+
+
+    .minutes-number {
+        left: 55.5%;
+        top: 72.8%;
+        width: 20%;
+    }
+
+
+    .seconds-number {
+        left: 80.5%;
+        top: 72.8%;
+        width: 20%;
+    }
+
 }
 
 
@@ -1437,83 +1521,33 @@ input:checked
 
 </section>
 
-    <!-- =====================================
-         COUNTDOWN
-    ====================================== -->
+    <!-- ==========================================
+     COUNTDOWN
+========================================== -->
 
-    <section
-        class="countdown-section"
-        id="countdown">
+<section class="countdown-section" id="countdown">
 
-        <h2 class="section-title">
-            ⏳ Countdown
-        </h2>
+    <div class="countdown-wrapper">
 
-        <div class="countdown">
-
-            <div class="count-box">
-
-                <span
-                    class="count-number"
-                    id="days">
-                    00
-                </span>
-
-                <span class="count-label">
-                    Days
-                </span>
-
-            </div>
-
-
-            <div class="count-box">
-
-                <span
-                    class="count-number"
-                    id="hours">
-                    00
-                </span>
-
-                <span class="count-label">
-                    Hours
-                </span>
-
-            </div>
-
-
-            <div class="count-box">
-
-                <span
-                    class="count-number"
-                    id="minutes">
-                    00
-                </span>
-
-                <span class="count-label">
-                    Minutes
-                </span>
-
-            </div>
-
-
-            <div class="count-box">
-
-                <span
-                    class="count-number"
-                    id="seconds">
-                    00
-                </span>
-
-                <span class="count-label">
-                    Seconds
-                </span>
-
-            </div>
-
+        <div class="countdown-number days-number" id="days">
+            00
         </div>
 
-    </section>
+        <div class="countdown-number hours-number" id="hours">
+            00
+        </div>
 
+        <div class="countdown-number minutes-number" id="minutes">
+            00
+        </div>
+
+        <div class="countdown-number seconds-number" id="seconds">
+            00
+        </div>
+
+    </div>
+
+</section>
 
     
 
