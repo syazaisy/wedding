@@ -1051,27 +1051,27 @@ input:checked
 ----------------------------------------- */
 
 #guestbookMessages {
-
     position: absolute;
 
-    /*
-       Keep messages below the form
-       and outside the main artwork.
-    */
     top: 76%;
-
     left: 7%;
-
     width: 86%;
 
-    text-align: center;
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
 
+    padding: 10px;
+    box-sizing: border-box;
+
+    text-align: center;
     color: #183d22;
 
     font-family:
         "DM Sans",
         sans-serif;
 
+    z-index: 5;
 }
 
 
