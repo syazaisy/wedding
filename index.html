@@ -1416,17 +1416,20 @@ input:checked
             Bilangan tetamu *
         </label>
 
-       <select id="rsvp-pax" name="pax" class="rsvp-select" required>
+       <select
+    id="rsvp-pax"
+    name="pax"
+    class="rsvp-select"
+    required>
 
-            <option value="">
-                Pilih bilangan tetamu
-            </option>
+    <option value="">
+        Pilih bilangan tetamu
+    </option>
 
-            <option value="1">1 orang</option>
-            <option value="2">2 orang</option>
+    <option value="1">1 orang</option>
+    <option value="2">2 orang</option>
 
-
-        </select>
+</select>
 
         <button
             type="submit"
@@ -1688,49 +1691,50 @@ const SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbzoxEIaouK29IIgCN_PEondzNHXXYtbQgPwVNF6EZdgjIc3ycqXr4a781XTIMhsQKP_SQ/exec";
 
 
-/* =========================================
+/* ==========================================
    RSVP SUBMISSION
-========================================= */
+========================================== */
 
 document
     .getElementById("rsvpForm")
-    .addEventListener(
-        "submit",
-        async function(event) {
+    .addEventListener("submit", async function(event) {
 
-            event.preventDefault();
+        event.preventDefault();
 
-            const form = event.target;
-            const data = new FormData(form);
+        const form = event.target;
 
-            data.append("type", "rsvp");
+        const name = form.querySelector('[name="name"]').value;
+        const attendance = form.querySelector('[name="attendance"]:checked')?.value || "";
+        const pax = form.querySelector('[name="pax"]').value;
 
-            try {
+        const data = new URLSearchParams();
 
-                await fetch(
-                    SCRIPT_URL,
-                    {
-                        method: "POST",
-                        body: data,
-                        mode: "no-cors"
-                    }
-                );
+        data.append("type", "rsvp");
+        data.append("name", name);
+        data.append("attendance", attendance);
+        data.append("pax", pax);
 
-                form.style.display = "none";
+        try {
 
-                document
-                    .getElementById("rsvpSuccess")
-                    .style.display = "block";
+            await fetch(SCRIPT_URL, {
+                method: "POST",
+                body: data,
+                mode: "no-cors"
+            });
 
-            } catch (error) {
+            form.style.display = "none";
 
-                alert(
-                    "Something went wrong. Please try again."
-                );
+            document
+                .getElementById("rsvpSuccess")
+                .style.display = "block";
 
-            }
+        } catch (error) {
+
+            alert("Something went wrong. Please try again.");
+
         }
-    );
+
+    });
 
 
 /* =========================================
