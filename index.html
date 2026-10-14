@@ -1169,23 +1169,24 @@ input:checked
 
 
     .guestbook-form button {
+    height: 52px;
+    font-size: 28px;
+    border-radius: 14px;
 
-        height: 52px;
-
-        font-size: 28px;
-
-        border-radius: 14px;
-
-    }
+    position: relative;
+    z-index: 20;
+}
 
 
-  #guestbookMessages {
-    top: 70%;
+ #guestbookMessages {
+    position: absolute;
+
+    top: 78%;
     left: 7%;
     width: 86%;
 
-    height: 100px;
-    max-height: 100px;
+    height: 90px;
+    max-height: 90px;
 
     overflow-y: auto;
     overflow-x: hidden;
@@ -1197,7 +1198,7 @@ input:checked
     font-size: 14px;
     color: #183d22;
 
-    z-index: 5;
+    z-index: 10;
 }
 
 
