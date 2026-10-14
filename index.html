@@ -1077,15 +1077,10 @@ input:checked
 /* Individual guest message */
 
 .guest-message {
-
-    margin-bottom: 15px;
-
-    padding: 15px;
-
+    margin-bottom: 8px;
+    padding: 8px 12px;
     background: #fffdf2;
-
     border-radius: 12px;
-
 }
 
 
@@ -1183,15 +1178,25 @@ input:checked
     }
 
 
-   #guestbookMessages {
-    top: 84%;
+  #guestbookMessages {
+    top: 65%;
     left: 7%;
     width: 86%;
+
+    height: 105px;
+    max-height: 105px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 4px 8px;
+    box-sizing: border-box;
+
     text-align: center;
     font-size: 14px;
     color: #183d22;
+
     z-index: 5;
-}
 }
 
 
