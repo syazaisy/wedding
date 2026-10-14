@@ -383,11 +383,15 @@ if (guestbookForm) {
    LOAD UCAPAN WHEN WEBSITE OPENS
    ----------------------------------------- */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+if (document.readyState === "loading") {
 
-        loadGuestbook();
+    document.addEventListener(
+        "DOMContentLoaded",
+        loadGuestbook
+    );
 
-    }
-);
+} else {
+
+    loadGuestbook();
+
+}
