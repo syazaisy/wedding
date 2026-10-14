@@ -173,7 +173,7 @@ if (rsvpForm) {
    ========================================= */
 
 const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbzoxEIaouK29IIgCN_PEondzNHXXYtbQgPwVNF6EZdgjIc3ycqXr4a781XTIMhsQKP_SQ/exec";
+    "https://script.google.com/macros/s/AKfycbzoxEIaouK29IIgCN_PEondzNHXXYtbQgPwVNF6EZdgIjIc3ycqXr4a781XTIMhsQKP_SQ/exec";
 
 
 const guestbookForm =
@@ -391,5 +391,3 @@ document.addEventListener(
 
     }
 );
-
-}
