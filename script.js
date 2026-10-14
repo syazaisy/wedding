@@ -172,59 +172,247 @@ if (rsvpForm) {
    5. GUESTBOOK
    ========================================= */
 
+const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbzoxEIaouK29IIgCN_PEondzNHXXYtbQgPwVNF6EZdgjIc3ycqXr4a781XTIMhsQKP_SQ/exec";
+
+
 const guestbookForm =
     document.getElementById("guestbookForm");
 
+const guestbookMessages =
+    document.getElementById("guestbookMessages");
+
+
+/* -----------------------------------------
+   LOAD PREVIOUS UCAPAN
+   ----------------------------------------- */
+
+function loadGuestbook() {
+
+    if (!guestbookMessages) return;
+
+
+    guestbookMessages.innerHTML =
+        "Loading ucapan...";
+
+
+    const callbackName =
+        "guestbookCallback_" + Date.now();
+
+
+    window[callbackName] = function(data) {
+
+        guestbookMessages.innerHTML = "";
+
+
+        if (!data || data.length === 0) {
+
+            guestbookMessages.innerHTML =
+                "Belum ada ucapan lagi ❤️";
+
+            delete window[callbackName];
+
+            return;
+        }
+
+
+        data.forEach(function(item) {
+
+            const messageCard =
+                document.createElement("div");
+
+            messageCard.className =
+                "guest-message";
+
+
+            const guestName =
+                document.createElement("div");
+
+            guestName.className =
+                "guest-name";
+
+            guestName.textContent =
+                item.name;
+
+
+            const guestText =
+                document.createElement("div");
+
+            guestText.className =
+                "guest-text";
+
+            guestText.textContent =
+                item.message;
+
+
+            messageCard.appendChild(
+                guestName
+            );
+
+            messageCard.appendChild(
+                guestText
+            );
+
+
+            guestbookMessages.appendChild(
+                messageCard
+            );
+
+        });
+
+
+        delete window[callbackName];
+
+    };
+
+
+    const script =
+        document.createElement("script");
+
+
+    script.src =
+        SCRIPT_URL +
+        "?action=getGuestbook&callback=" +
+        callbackName;
+
+
+    script.onerror = function() {
+
+        guestbookMessages.innerHTML =
+            "Ucapan tidak dapat dimuatkan.";
+
+        delete window[callbackName];
+
+    };
+
+
+    document.body.appendChild(script);
+
+}
+
+
+/* -----------------------------------------
+   SUBMIT NEW UCAPAN
+   ----------------------------------------- */
 
 if (guestbookForm) {
 
     guestbookForm.addEventListener(
         "submit",
-        function(event) {
+        async function(event) {
 
             event.preventDefault();
 
 
             const name =
                 document.getElementById(
-                    "messageName"
-                ).value;
+                    "guest-name"
+                ).value.trim();
 
 
             const message =
                 document.getElementById(
-                    "guestMessage"
-                ).value;
+                    "guest-message"
+                ).value.trim();
 
 
-            // Create new message card
+            if (!name || !message) {
 
-            const messageCard =
-                document.createElement("div");
+                return;
 
-
-            messageCard.className =
-                "message-card";
+            }
 
 
-            messageCard.innerHTML = `
-                <h4>❤️ ${name}</h4>
-                <p>"${message}"</p>
-            `;
+            const data =
+                new URLSearchParams();
 
 
-            // Add message to guestbook
+            data.append(
+                "type",
+                "guestbook"
+            );
 
-            document.getElementById(
-                "messages"
-            ).prepend(messageCard);
+
+            data.append(
+                "name",
+                name
+            );
 
 
-            // Clear form
+            data.append(
+                "message",
+                message
+            );
 
-            guestbookForm.reset();
+
+            try {
+
+                await fetch(
+                    SCRIPT_URL,
+                    {
+                        method: "POST",
+                        body: data,
+                        mode: "no-cors"
+                    }
+                );
+
+
+                /* Add new message immediately */
+
+                const messageCard =
+                    document.createElement("div");
+
+
+                messageCard.className =
+                    "guest-message";
+
+
+                messageCard.innerHTML = `
+                    <div class="guest-name">
+                        ${name}
+                    </div>
+
+                    <div class="guest-text">
+                        ${message}
+                    </div>
+                `;
+
+
+                guestbookMessages.prepend(
+                    messageCard
+                );
+
+
+                /* Clear form */
+
+                guestbookForm.reset();
+
+
+            } catch (error) {
+
+                alert(
+                    "Something went wrong. Please try again."
+                );
+
+            }
 
         }
     );
+
+}
+
+
+/* -----------------------------------------
+   LOAD UCAPAN WHEN WEBSITE OPENS
+   ----------------------------------------- */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadGuestbook();
+
+    }
+);
 
 }
