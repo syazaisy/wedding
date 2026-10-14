@@ -191,19 +191,14 @@ function loadGuestbook() {
 
     if (!guestbookMessages) return;
 
-
-    guestbookMessages.innerHTML =
-        "Loading ucapan...";
-
+    guestbookMessages.innerHTML = "Loading ucapan...";
 
     const callbackName =
         "guestbookCallback_" + Date.now();
 
-
     window[callbackName] = function(data) {
 
         guestbookMessages.innerHTML = "";
-
 
         if (!data || data.length === 0) {
 
@@ -214,7 +209,6 @@ function loadGuestbook() {
 
             return;
         }
-
 
         data.forEach(function(item) {
 
@@ -260,7 +254,6 @@ function loadGuestbook() {
 
         });
 
-
         delete window[callbackName];
 
     };
@@ -276,20 +269,8 @@ function loadGuestbook() {
         callbackName;
 
 
-    script.onerror = function() {
-
-        guestbookMessages.innerHTML =
-            "Ucapan tidak dapat dimuatkan.";
-
-        delete window[callbackName];
-
-    };
-
-
     document.body.appendChild(script);
-
 }
-
 
 /* -----------------------------------------
    SUBMIT NEW UCAPAN
