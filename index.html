@@ -1077,10 +1077,11 @@ input:checked
 /* Individual guest message */
 
 .guest-message {
-    margin-bottom: 8px;
-    padding: 8px 12px;
+    margin: 0 0 6px 0;
+    padding: 7px 10px;
     background: #fffdf2;
     border-radius: 12px;
+    box-sizing: border-box;
 }
 
 
@@ -1155,51 +1156,64 @@ input:checked
 
     .guestbook-form textarea {
 
-    min-height: 90px;
-    height: 90px;
+        flex: 0 0 90px;
+        min-height: 90px;
+        height: 90px;
+        max-height: 90px;
 
-    padding:
-        14px 15px;
+        padding:
+            14px 15px;
 
-    font-size: 14px;
+        font-size: 14px;
 
-    border-radius: 12px;
+        border-radius: 12px;
 
-}
+        box-sizing: border-box;
+
+    }
 
 
     .guestbook-form button {
-    height: 52px;
-    font-size: 28px;
-    border-radius: 14px;
 
-    position: relative;
-    z-index: 20;
-}
+        height: 52px;
+        min-height: 52px;
+        flex: 0 0 52px;
+
+        font-size: 28px;
+        border-radius: 14px;
+
+        position: relative;
+        z-index: 20;
+
+    }
 
 
- #guestbookMessages {
-    position: absolute;
+    #guestbookMessages {
 
-    top: 78%;
-    left: 7%;
-    width: 86%;
+        position: absolute;
 
-    height: 90px;
-    max-height: 90px;
+        top: 61%;
+        left: 7%;
+        width: 86%;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+        height: 115px;
+        max-height: 115px;
 
-    padding: 4px 8px;
-    box-sizing: border-box;
+        margin: 0;
 
-    text-align: center;
-    font-size: 14px;
-    color: #183d22;
+        overflow-y: auto;
+        overflow-x: hidden;
 
-    z-index: 10;
-}
+        padding: 4px 8px;
+        box-sizing: border-box;
+
+        text-align: center;
+        font-size: 14px;
+        color: #183d22;
+
+        z-index: 10;
+
+    }
 
 
 /* =========================================
