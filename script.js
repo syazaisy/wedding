@@ -193,83 +193,79 @@ function loadGuestbook() {
 
     guestbookMessages.innerHTML = "Loading ucapan...";
 
-    const callbackName =
-        "guestbookCallback_" + Date.now();
-
-    window[callbackName] = function(data) {
-
-        guestbookMessages.innerHTML = "";
-
-        if (!data || data.length === 0) {
-
-            guestbookMessages.innerHTML =
-                "Belum ada ucapan lagi ❤️";
-
-            delete window[callbackName];
-
-            return;
-        }
-
-        data.forEach(function(item) {
-
-            const messageCard =
-                document.createElement("div");
-
-            messageCard.className =
-                "guest-message";
-
-
-            const guestName =
-                document.createElement("div");
-
-            guestName.className =
-                "guest-name";
-
-            guestName.textContent =
-                item.name;
-
-
-            const guestText =
-                document.createElement("div");
-
-            guestText.className =
-                "guest-text";
-
-            guestText.textContent =
-                item.message;
-
-
-            messageCard.appendChild(
-                guestName
-            );
-
-            messageCard.appendChild(
-                guestText
-            );
-
-
-            guestbookMessages.appendChild(
-                messageCard
-            );
-
-        });
-
-        delete window[callbackName];
-
-    };
-
-
-    const script =
-        document.createElement("script");
-
+    const script = document.createElement("script");
 
     script.src =
         SCRIPT_URL +
-        "?action=getGuestbook&callback=" +
-        callbackName;
+        "?action=getGuestbook&callback=showGuestbook";
 
+    script.onerror = function () {
+
+        guestbookMessages.innerHTML =
+            "Ucapan tidak dapat dimuatkan.";
+
+        console.log("Guestbook loading failed.");
+
+    };
 
     document.body.appendChild(script);
+}
+
+
+function showGuestbook(data) {
+
+    console.log("Guestbook data received:", data);
+
+    if (!guestbookMessages) return;
+
+    guestbookMessages.innerHTML = "";
+
+    if (!data || data.length === 0) {
+
+        guestbookMessages.innerHTML =
+            "Belum ada ucapan lagi ❤️";
+
+        return;
+    }
+
+
+    data.forEach(function(item) {
+
+        const messageCard =
+            document.createElement("div");
+
+        messageCard.className =
+            "guest-message";
+
+
+        const guestName =
+            document.createElement("div");
+
+        guestName.className =
+            "guest-name";
+
+        guestName.textContent =
+            item.name;
+
+
+        const guestText =
+            document.createElement("div");
+
+        guestText.className =
+            "guest-text";
+
+        guestText.textContent =
+            item.message;
+
+
+        messageCard.appendChild(guestName);
+
+        messageCard.appendChild(guestText);
+
+        guestbookMessages.appendChild(messageCard);
+
+    });
+
 }
 
 /* -----------------------------------------
