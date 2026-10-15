@@ -262,12 +262,79 @@ function showGuestbook(data) {
 
         messageCard.appendChild(guestText);
 
-        guestbookMessages.appendChild(messageCard);
+            guestbookMessages.appendChild(messageCard);
+});
 
-    });
+startGuestbookAutoScroll();
 
 }
+/* =========================================
+   GUESTBOOK AUTO SCROLL
+========================================= */
 
+function startGuestbookAutoScroll() {
+
+    const box =
+        document.getElementById("guestbookMessages");
+
+    if (!box) return;
+
+    /* Prevent multiple auto-scroll timers */
+    if (box.dataset.autoScrollStarted === "true") {
+        return;
+    }
+
+    /* Start only when there is actually
+       content that can scroll */
+    if (box.scrollHeight <= box.clientHeight) {
+        return;
+    }
+
+    box.dataset.autoScrollStarted = "true";
+
+    let scrollPosition = box.scrollTop;
+
+    function scrollGuestbook() {
+
+        scrollPosition += 0.35;
+
+        box.scrollTop = scrollPosition;
+
+        /* When reaching the bottom */
+        if (
+            box.scrollTop + box.clientHeight >=
+            box.scrollHeight - 2
+        ) {
+
+            /* Pause at the bottom */
+            setTimeout(function () {
+
+                scrollPosition = 0;
+                box.scrollTop = 0;
+
+                requestAnimationFrame(
+                    scrollGuestbook
+                );
+
+            }, 2500);
+
+            return;
+        }
+
+        requestAnimationFrame(
+            scrollGuestbook
+        );
+    }
+
+    /* Wait 2 seconds before starting */
+    setTimeout(function () {
+
+        requestAnimationFrame(
+            scrollGuestbook
+        );
+
+    }, 2000);
+}
 /* -----------------------------------------
    SUBMIT NEW UCAPAN
    ----------------------------------------- */
