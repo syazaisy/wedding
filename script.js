@@ -395,3 +395,65 @@ if (document.readyState === "loading") {
     loadGuestbook();
 
 }
+/* =========================================
+   AUTO SCROLL GUESTBOOK
+========================================= */
+
+function autoScrollGuestbook() {
+
+    const container =
+        document.getElementById("guestbookMessages");
+
+    if (!container) return;
+
+    let scrollingDown = true;
+
+    setInterval(function() {
+
+        /*
+         * Scroll down slowly
+         */
+        if (scrollingDown) {
+
+            container.scrollTop += 0.5;
+
+            /*
+             * When reaching the bottom,
+             * stop for a moment.
+             */
+            if (
+                container.scrollTop +
+                container.clientHeight >=
+                container.scrollHeight - 2
+            ) {
+
+                scrollingDown = false;
+
+            }
+
+        } else {
+
+            /*
+             * Slowly scroll back to the top
+             */
+            container.scrollTop -= 0.5;
+
+            /*
+             * Once we reach the top,
+             * start scrolling down again.
+             */
+            if (container.scrollTop <= 0) {
+
+                scrollingDown = true;
+
+            }
+
+        }
+
+    }, 40);
+}
+
+
+/* Start automatic scrolling */
+
+autoScrollGuestbook();
