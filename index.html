@@ -1880,7 +1880,53 @@ function escapeHTML(text) {
 }
 
 </script>
+<script>
+function weddingGuestbook(data) {
 
+    const box = document.getElementById("guestbookMessages");
+
+    if (!box) return;
+
+    box.innerHTML = "";
+
+    if (!data || data.length === 0) {
+
+        box.innerHTML = "Belum ada ucapan lagi ❤️";
+        return;
+
+    }
+
+    data.forEach(function(item) {
+
+        const card = document.createElement("div");
+        card.className = "guest-message";
+
+        const name = document.createElement("div");
+        name.className = "guest-name";
+        name.textContent = item.name;
+
+        const message = document.createElement("div");
+        message.className = "guest-text";
+        message.textContent = item.message;
+
+        card.appendChild(name);
+        card.appendChild(message);
+
+        box.appendChild(card);
+
+    });
+}
+
+
+const guestbookScript = document.createElement("script");
+
+guestbookScript.src =
+    "https://script.google.com/macros/s/AKfycbzoxEIaouK29IIgCN_PEondzNHXXYtbQgPwVNF6EZdgjIc3ycqXr4a781XTIMhsQKP_SQ/exec" +
+    "?action=getGuestbook&callback=weddingGuestbook";
+
+document.body.appendChild(guestbookScript);
+</script>
+      
 </body>
 
 </html>
