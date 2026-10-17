@@ -171,33 +171,125 @@
    GUESTBOOK MESSAGE DISPLAY
 ========================================= */
 
-#guestbookMessages {
-    height: 800px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
+function startGuestbookAutoScroll() {
+
+    const container =
+        document.getElementById("guestbookMessages");
+
+    if (!container) return;
 
 
-/* Individual ucapan */
+    /* Stop previous auto-scroll */
+    if (guestbookScrollTimer) {
 
-.guest-message {
-    padding: 18px 20px;
-    margin-bottom: 12px;
-    border-radius: 18px;
-    background: #faf8e7;
-    text-align: center;
-}
+        clearInterval(guestbookScrollTimer);
 
+        guestbookScrollTimer = null;
 
-.guest-name {
-    font-weight: bold;
-    margin-bottom: 8px;
-}
+    }
 
 
-.guest-text {
-    line-height: 1.5;
+    /* Wait until the messages are actually loaded */
+    setTimeout(function () {
+
+        /*
+         * Check whether there is enough content
+         * to create a scrollable area.
+         */
+
+        const maxScroll =
+            container.scrollHeight -
+            container.clientHeight;
+
+
+        /*
+         * Nothing to scroll yet.
+         */
+
+        if (maxScroll <= 5) {
+
+            console.log(
+                "Guestbook: not enough content to scroll."
+            );
+
+            return;
+
+        }
+
+
+        let scrollPosition = 0;
+
+        let direction = 1;
+
+        let paused = false;
+
+
+        guestbookScrollTimer =
+            setInterval(function () {
+
+                if (paused) return;
+
+
+                /*
+                 * Move very slowly.
+                 */
+
+                scrollPosition +=
+                    0.5 * direction;
+
+
+                container.scrollTop =
+                    scrollPosition;
+
+
+                /*
+                 * Reached bottom.
+                 */
+
+                if (
+                    scrollPosition >=
+                    maxScroll
+                ) {
+
+                    scrollPosition =
+                        maxScroll;
+
+                    container.scrollTop =
+                        maxScroll;
+
+
+                    paused = true;
+
+
+                    /*
+                     * Stay at bottom for
+                     * 2 seconds.
+                     */
+
+                    setTimeout(function () {
+
+                        /*
+                         * Go back to the top.
+                         */
+
+                        scrollPosition = 0;
+
+                        container.scrollTop = 0;
+
+                        direction = 1;
+
+                        paused = false;
+
+                    }, 2000);
+
+                }
+
+
+            }, 40);
+
+
+    }, 1000);
+
 }
 /* =========================================
    MOBILE
