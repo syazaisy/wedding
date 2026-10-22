@@ -2720,6 +2720,38 @@ function escapeHTML(text) {
 ========================================= */
 
 loadGuestbook();
+      
+      function loadRSVPCount() {
+
+    const callbackName = "rsvpCountCallback";
+
+    window[callbackName] = function(data) {
+
+        const totalElement =
+            document.getElementById("rsvpTotal");
+
+        if (!totalElement) return;
+
+        if (data && data.success) {
+            totalElement.textContent =
+                data.total + " orang";
+        } else {
+            totalElement.textContent =
+                "0 orang";
+        }
+    };
+
+    const script = document.createElement("script");
+
+    script.src =
+        SCRIPT_URL +
+        "?action=getRSVPCount&callback=" +
+        encodeURIComponent(callbackName);
+
+    document.body.appendChild(script);
+}
+
+loadRSVPCount();
 
 </script>
 
